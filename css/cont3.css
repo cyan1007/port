@@ -2,8 +2,8 @@
 .cont3 {
   width: 100vw;
   height: 100vh;
-  background-color: #0a0a0a;
-  color: #0a0a0a;
+  background-color: var(--color-bg); /* #0a0a0a 대신 변수 */
+  color: var(--color-text-main); /* #0a0a0a 대신 변수 (텍스트용) */
 }
 
 /* ------------------------------
@@ -32,7 +32,7 @@
   width: 40vw;
   height: 100%;
   border-radius: 2rem;
-  background-color: #fff;
+  background-color: var(--color-slide-bg); /* 기존 box-bg에서 분리 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +94,7 @@
 .mobile-slide {
   flex: 0 0 100%;
   height: 100%;
-  background: white;
+  background: var(--color-box-bg); /* 흰색 대신 변수 */
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -114,6 +114,7 @@
   transform: translateY(40px);
   transition: all 0.5s ease;
   position: relative;
+  box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
 }
 
 .slide.active .portfolio-info {
@@ -130,12 +131,12 @@
   display: block;
   margin: 0 auto;
 }
-
 .portfolio-info h3,
 .portfolio-info p {
   padding-top: 1rem;
   padding-left: 1.8rem;
   text-align: left;
+  color: var(--color-accent); /* 텍스트 색상 변수 적용 */
 }
 
 .portfolio-info h3 {
@@ -144,6 +145,7 @@
 
 .portfolio-info p {
   font-size: clamp(0.9rem, 3vw, 1rem);
+  color: var(--color-text-muted); /* 본문 텍스트 색상 변수 적용 */
 }
 
 /* ------------------------------
@@ -156,9 +158,9 @@
   font-size: 2rem;
   cursor: pointer;
   z-index: 10;
-  border: 1px solid #00f6ff;
-  background: rgba(0, 255, 255, 0.1);
-  color: #00f6ff;
+  border: 1px solid var(--color-accent); /* #00f6ff 대신 변수 */
+  background: rgba(0, 255, 255, 0.4);
+  color: var(--color-accent); /* #00f6ff 대신 변수 */
   padding: 1rem 1.5rem;
   border-radius: 10px;
   transition: background 0.3s, border 0.3s;
@@ -166,7 +168,19 @@
 
 .slide-btn:hover {
   background: rgba(0, 255, 255, 0.3);
-  border-color: #00ffff;
+  border-color: var(--color-accent-hover);
+}
+.cont3.desktop-active .slide {
+  box-shadow: 0 0 20px var(--color-shadow); /* 기본값 */
+}
+
+.portfolio-info {
+  box-shadow: none !important;
+}
+
+.cont3.desktop-active .slide.prev,
+.cont3.desktop-active .slide.next {
+  box-shadow: none; /* 비활성화된 슬라이드에는 그림자 제거 */
 }
 
 .prev-btn {
@@ -191,8 +205,8 @@
 
 .tab-btn {
   background: transparent;
-  color: #00f6ff;
-  border: 1px solid #00f6ff;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
   padding: 0.5rem 1rem;
   border-radius: 999px;
   cursor: pointer;
@@ -202,7 +216,7 @@
 
 .tab-btn.active,
 .tab-btn:hover {
-  background: #00f6ff;
+  background: var(--color-accent);
   color: black;
 }
 
@@ -268,8 +282,8 @@
 .view-more {
   padding: 0.6rem 1.5rem;
   background-color: transparent;
-  color: white;
-  border: 1px solid white;
+  color: var(--color-text-white);
+  border: 1px solid var(--color-text-white);
   border-radius: 1rem;
   font-weight: bold;
   font-size: 1rem;
@@ -281,8 +295,8 @@
 .btn-view:hover,
 .btn-work:hover,
 .view-more:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
+  background-color: var(--color-accent-hover);
+  color: var(--text-dark);
 }
 
 .mobile-buttons {
@@ -295,8 +309,8 @@
 .mobile-buttons .btn-work {
   padding: 0.6rem 1rem;
   font-size: 0.9rem;
-  background: #00f6ff;
-  color: black;
+  background: var(--color-accent);
+  color: var(--text-dark);
   border: none;
   border-radius: 0.8rem;
   font-weight: bold;
@@ -312,7 +326,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-modal-bg);
 }
 
 #slide-modal .modal-content {
@@ -320,14 +334,14 @@
   max-width: 600px;
   margin: 10% auto;
   padding: 2rem;
-  background: white;
+  background: var(--color-box-bg);
   border-radius: 1rem;
 }
 
 #slide-modal .modal-body {
   max-height: 70vh;
   overflow-y: auto;
-  color: black;
+  color: var(--color-box-bg);
 }
 
 #slide-modal .close-btn-slide {
@@ -350,7 +364,7 @@
   right: 1rem;
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: var(--color-text-main);
   cursor: pointer;
   background: none;
   border: none;
@@ -358,5 +372,5 @@
 }
 
 .close-btn-slide:hover {
-  color: #000;
+  color: var(--text-dark);
 }

@@ -1,11 +1,11 @@
 .fullscreen-section {
   width: 100vw;
   min-height: 100vh;
-  background: #0f0f0f;
+  background: var(--bg-dark);
   display: flex;
   align-items: center;
   padding: 4rem 2rem;
-  color: #fff;
+  color: var(--text-light);
 }
 
 .intro-wrapper {
@@ -28,7 +28,7 @@
   height: 240px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #00f6ff;
+  border: 4px solid var(--accent);
   box-shadow: 0 0 20px rgba(0, 246, 255, 0.4);
 }
 
@@ -40,18 +40,19 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
+  color: var(--text-light);
   line-height: 1.3;
 }
 
 .intro-right .highlight {
-  color: #00f6ff;
+  color: var(--accent);
 }
 
 .intro-text {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  color: #ddd;
+  color: var(--text-subtle);
 }
 
 .intro-tags {
@@ -62,17 +63,17 @@
 }
 
 .intro-tags span {
-  background: #1a1a1a;
-  border: 1px solid #00f6ff;
+  background: var(--tag-bg);
+  border: 1px solid var(--accent);
   padding: 0.4rem 0.8rem;
   border-radius: 8px;
   font-size: 0.85rem;
-  color: #00f6ff;
+  color: var(--accent);
 }
 
 .intro-career h3 {
   margin-bottom: 0.8rem;
-  color: #00f6ff;
+  color: var(--accent);
 }
 
 .intro-career ul {
@@ -83,7 +84,7 @@
 .intro-career li {
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
-  color: #ccc;
+  color: var(--text-muted);
 }
 
 /* 모바일 대응 */

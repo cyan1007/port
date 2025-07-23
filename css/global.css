@@ -8,16 +8,85 @@
    ✅ 공통 변수 및 초기화
    ============================= */
 :root {
-  --primary: #222;
-  --accent: #1c3faa;
-  --hover: #5ac8fa;
-  --bg: #f9fafb;
-  --text: #2e2e2e;
-  --textac: #a0f0c9;
-  --white: #fff;
+  /* 다크모드 기본 색상 */
+  --bg-dark: #0f0f0f;
+  --text-light: #ffffff;
+  --text-subtle: #dddddd;
+  --text-muted: #cccccc;
+  --accent: #00f6ff;
+  --button: #00e498;
+  --tag-bg: #1a1a1a;
+  --color-bg: #0a0a0a;
+  --color-accent: #00f6ff;
+  --color-accent-hover: #00d0ff;
 
-  --lightte: #2e2e2e;
-  --lightbg: #e7e7e7;
+  --hero-bg-light1: #f0f0f0;
+  --hero-bg-light2: #e0e0e0;
+  --color-text-white: #ffffff;
+  --color-overlay-dark: rgba(0, 0, 0, 0.5);
+
+  --color-text-white: #ffffff;
+  --color-text-light-gray: #c5faff;
+  --color-text-gray: #aaa;
+  --color-text-muted: #ccc;
+  --color-text-dark: #000;
+
+  --color-gradient-start: #00f6ff;
+  --color-gradient-end: #00d0ff;
+
+  --color-sub-accent: #c5faff;
+
+  --color-shadow-black-30: rgba(0, 0, 0, 0.3);
+  --color-shadow-cyan-55: #00f6ff55;
+  --color-shadow-cyan-glow-from: #00f6ff;
+  --color-shadow-cyan-glow-to: #00ffff;
+
+  --color-box-bg: #111111;
+  --color-border: #00f6ff44;
+  --color-shadow: rgba(0, 246, 255, 0.2);
+  --color-hover: #005fa3;
+  --color-highlight-gradient-start: #00f6ff;
+  --color-highlight-gradient-end: #00d0ff;
+
+  --color-slide-bg: #363636; /* 기본 다크모드용 */
+}
+
+/* 라이트모드 변수 */
+body.light-mode {
+  --bg-dark: #f9f9f9;
+  --text-light: #111111;
+  --text-subtle: #444444;
+  --text-muted: #666666;
+  --accent: #007acc;
+  --tag-bg: #e6f0f7;
+  --color-bg: #ffffff;
+  --color-accent: #0077cc;
+  --color-accent-hover: #005fa3;
+
+  --color-text-white: #000000;
+  --color-text-light-gray: #a0a0a0;
+  --color-text-gray: #555555;
+  --color-text-muted: #666666;
+  --color-text-dark: #111111;
+
+  --color-gradient-start: #0077cc;
+  --color-gradient-end: #005fa3;
+
+  --color-sub-accent: #005fa3;
+
+  --color-shadow-black-30: rgba(0, 0, 0, 0.05);
+  --color-shadow-cyan-55: #005fa355;
+  --color-shadow-cyan-glow-from: #0077cc;
+  --color-shadow-cyan-glow-to: #005fa3;
+
+  --color-box-bg: #f9f9f9;
+  --color-border: #cccccc;
+  --color-shadow: rgba(0, 0, 0, 0.05);
+  --color-hover: #003a66;
+  --color-highlight-gradient-start: #0077cc;
+  --color-highlight-gradient-end: #005fa3;
+
+  --color-slide-bg: #f5f5f5; /* 라이트모드용 밝은 색상 */
 }
 
 * {
