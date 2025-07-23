@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================
+   ✅ 공통 변수 및 초기화
+   ============================= */
+:root {
+  --primary: #222;
+  --accent: #1c3faa;
+  --hover: #5ac8fa;
+  --bg: #f9fafb;
+  --text: #2e2e2e;
+  --textac: #a0f0c9;
+  --white: #fff;
+
+  --lightte: #2e2e2e;
+  --lightbg: #e7e7e7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Pretendard", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrap {
+  overflow-x: hidden;
+}

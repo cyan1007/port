@@ -1,0 +1,94 @@
+#problem-solving {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background-color: #1a1a1a; /* 기본: 다크 배경 */
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#problem-solving h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+/* 타임라인 */
+.timeline {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  border-left: 4px solid #00f6ff;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #00f6ff;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 4px;
+}
+
+.timeline-item h3 {
+  font-size: 1.2rem;
+  color: #00f6ff;
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 기여도 카드 */
+.my-contribution {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border-left: 8px solid #28a745;
+  color: #222;
+}
+
+.my-contribution h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.my-contribution ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.my-contribution li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+body:not(.light-mode) .my-contribution {
+  background: #1a1a1a; /* 다크 박스 배경 */
+  color: #00f6ff; /* 시안색 텍스트 */
+  box-shadow: 0 3px 8px rgba(0, 255, 255, 0.15);
+  border-left: 6px solid #00f6ff;
+}
+
+body:not(.light-mode) .my-contribution h3 {
+  color: #00f6ff;
+}
+
+body:not(.light-mode) .my-contribution li strong {
+  color: #00f6ff;
+}

@@ -1,0 +1,155 @@
+.cont5 {
+  background-color: #111;
+  color: #00f6ff;
+  padding: 3rem 2rem;
+}
+
+.cont5-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hi-tech-cards {
+  flex: 1 1 600px;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-form {
+  flex: 1 1 400px;
+  margin-top: 80px;
+  text-align: center;
+  color: #fff;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hi-card {
+  background: linear-gradient(145deg, #0d0d0d, #1c1c1c);
+  border: 1px solid #00f6ff33;
+  padding: 2rem;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00f6ff22;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(33.333% - 1.5rem); /* 카드 간 gap 고려 */
+  min-width: 260px;
+  max-width: 320px;
+}
+
+.hi-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px #00f6ff66;
+}
+
+.contact-form h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00f6ff;
+}
+
+.contact-form p {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: 1px solid #00f6ff;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background-color: #00f6ff;
+  color: #000;
+  font-weight: bold;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #00c2d3;
+}
+
+.contact-sns {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.profile-box {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+}
+
+.profile-box img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .cont5-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .hi-tech-cards {
+    justify-content: center;
+  }
+  .hi-tech-cards,
+  .contact-form,
+  .contact-sns,
+  .profile-box {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .profile-box {
+    flex-direction: column;
+  }
+}

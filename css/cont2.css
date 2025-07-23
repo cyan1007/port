@@ -1,0 +1,84 @@
+.cont2 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 60px 20px;
+  width: 100vw;
+  height: 100vh;
+  background: #111; /* 어두운 배경 */
+}
+.cont2 .neon-text {
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+}
+
+.box-wrap {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 박스 모음만 따로 flex 줄로 정렬 */
+.box-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* 작은 화면에서 줄바꿈 허용 */
+}
+
+.box {
+  background: #1a1a1a; /* 어두운 박스 배경 */
+  color: #00f6ff;
+  box-shadow: 0 3px 8px rgba(0, 255, 255, 0.15);
+  width: 30vw;
+  height: 60vh;
+  border-radius: 10px;
+
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 제목 가운데 */
+  justify-content: center;
+  text-align: center;
+
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  flex-shrink: 0; /* ✅ 잘리는 것 방지 */
+}
+
+.box.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.box h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.box p {
+  text-align: left; /* 본문은 왼쪽 정렬 */
+  max-width: 90%;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ✅ 반응형 - 화면 작아지면 세로 정렬 */
+@media (max-width: 950px) {
+  .cont2 {
+    height: 100%;
+  }
+  .box-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 90%;
+    max-width: 400px;
+  }
+}

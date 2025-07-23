@@ -1,0 +1,248 @@
+/* 라이트 모드용 스타일 */
+/* 라이트 모드일 때 전체적으로 시안색 → 연한 회색으로 덮어쓰기 */
+body.light-mode {
+  --accent: #ccc;
+  --hover: #ddd;
+  --textac: #666;
+}
+
+body.light-mode .tab-btn,
+body.light-mode .tab-btn.active,
+body.light-mode .slide-btn,
+body.light-mode .slide-overlay .view-more,
+body.light-mode .box,
+body.light-mode .hi-card,
+body.light-mode .portfolio-info,
+body.light-mode .slider .slide-btn {
+  border-color: #ccc !important;
+  color: #333 !important;
+}
+
+body.light-mode .tab-btn.active,
+body.light-mode .tab-btn:hover {
+  background: #ccc;
+  color: #000;
+}
+
+body.light-mode .slide-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333 !important;
+}
+
+body.light-mode .slide-overlay .view-more:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .cont1,
+body.light-mode .cont2,
+body.light-mode .cont3,
+body.light-mode .cont4,
+body.light-mode .header {
+  background-color: #ffffff;
+  color: #000552;
+}
+
+body.light-mode .cont1 > .hero-content {
+  color: gold;
+}
+
+body.light-mode .cont2 > .box {
+  background: #ccc !important;
+}
+
+body.light-mode .slide-overlay .view-more {
+  color: black;
+  border-color: black;
+}
+
+body.light-mode .slide-overlay .view-more:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* 토글 버튼 스타일 */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background-color: #111;
+  color: #ffffff;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: background 0.3s;
+}
+
+.theme-toggle {
+  bottom: 100px; /* 기존보다 조금 위로 */
+}
+
+.top-btn {
+  bottom: 40px;
+}
+
+body.light-mode .theme-toggle {
+  background-color: #dfdfdf;
+  color: #464646;
+}
+
+body.light-mode .neon-text {
+  color: #333;
+  text-shadow: none;
+  text-shadow: 0 0 5px #d3d3d3, 0 0 10px #858585, 0 0 20px #d3d3d3,
+    0 0 40px #55555555 !important;
+}
+
+body.light-mode .highlight {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: #111 !important;
+  color: #111 !important;
+  text-shadow: none !important;
+  animation: none !important;
+  text-shadow: 0 0 5px #d3d3d3, 0 0 10px #858585, 0 0 20px #d3d3d3,
+    0 0 40px #55555555 !important;
+}
+
+body.light-mode .cont3 .slide {
+  background-color: #d8d8d8;
+}
+
+body.light-mode .hi-card {
+  background: #f5f5f5; /* 연한 회색 배경 */
+  border: 1px solid #ccc;
+  color: #222;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #typed-text {
+  color: #00aeff;
+}
+
+body.light-mode .hero a.button {
+  background: #0077cc;
+  color: white;
+}
+
+body.light-mode .hero a.button:hover {
+  background: #005fa3;
+}
+
+body.light-mode .image-column::before {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+body.light-mode .slide-overlay .view-more {
+  color: white !important;
+  border-color: white !important;
+}
+
+body.light-mode .slide-overlay .view-more:hover {
+  background: rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+body.light-mode header nav ul li a {
+  color: #202020 !important;
+}
+
+body.light-mode .cursor-dot {
+  background-color: #0077cc;
+  box-shadow: 0 0 6px rgba(0, 119, 204, 0.4);
+  mix-blend-mode: normal;
+}
+
+body.light-mode .top-btn {
+  background-color: #dfdfdf;
+  color: #000;
+}
+
+body.light-mode .top-btn:hover {
+  background-color: #eee;
+}
+
+body.light-mode #problem-solving {
+  background-color: #f5f5f5; /* 밝고 부드러운 회색 */
+  color: #1808f8;
+}
+
+body.light-mode #problem-solving h2 {
+  color: #000;
+}
+
+body.light-mode .timeline {
+  border-left: 4px solid #606db4;
+}
+
+body.light-mode .timeline-item h3 {
+  color: #090247;
+}
+
+body.light-mode .timeline-item::before {
+  background-color: #0514ee;
+}
+
+body.light-mode .fullscreen-section {
+  background: #f9f9f9;
+  color: #222;
+}
+
+body.light-mode .profile-img {
+  border: 4px solid #00aaff;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+}
+
+body.light-mode .intro-right h1 {
+  color: #007acc;
+}
+
+body.light-mode .intro-right .highlight {
+  color: #007acc;
+}
+
+body.light-mode .intro-text {
+  color: #444;
+}
+
+body.light-mode .intro-tags span {
+  background: #e1e7f0;
+  border: 1px solid #007acc;
+  color: #007acc;
+}
+
+body.light-mode .intro-career h3 {
+  color: #007acc;
+}
+
+body.light-mode .intro-career li {
+  color: #555;
+}
+
+body.light-mode .process-ul {
+  border-left: 2px solid #bbb;
+}
+
+body.light-mode .process-ul li {
+  color: #222;
+}
+
+body.light-mode .process-ul li::before {
+  background-color: #888;
+  box-shadow: 0 0 6px #bbb;
+}
+
+body.light-mode .step-icon {
+  filter: drop-shadow(0 0 2px #999999aa);
+}
+
+body.light-mode .process-ul li strong {
+  color: #222;
+}
