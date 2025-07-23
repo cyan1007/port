@@ -8,9 +8,15 @@ const slideSets = {
     {
       title: "이음누리 도서관",
       desc: "연재플랫폼 브랜드 기획 발표",
-      img: "https://unsplash.it/600/400?random=11",
+      img: "images/cont3/nuri.jpg",
       type: "modal",
-      content: `<h3>브랜드 기획 발표내용</h3><p>이음누리 도서관 어플을 기획하면서 한 발표 내용입니다.</p>`,
+      content: `<h3>브랜드 기획 발표내용</h3>  
+      <iframe 
+    src="documents/eumnuri.pdf" 
+    width="100%" 
+    height="600px" 
+    style="border: none;">
+  </iframe><p>이음누리 도서관 어플을 기획하면서 한 발표 내용입니다.</p>`,
     },
     {
       title: "앱 디자인 1",
@@ -66,7 +72,7 @@ const slideSets = {
       desc: "반응형 포트폴리오용 웹사이트 입니다.",
       img: "https://unsplash.it/600/400?random=24",
       type: "link",
-      url: "https://pot-liblary-ffj7gf0a6-miko1024s-projects.vercel.app/",
+      url: "https://pot-liblary.vercel.app/",
     },
     {
       title: "추가예정",

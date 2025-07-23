@@ -337,3 +337,26 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .modal-content iframe {
+    height: 400px;
+  }
+}
+
+.close-btn-slide {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 10001; /* 혹시 가려질 경우 */
+}
+
+.close-btn-slide:hover {
+  color: #000;
+}
