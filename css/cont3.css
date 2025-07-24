@@ -191,6 +191,10 @@
    미디어쿼리
 -------------------------------- */
 @media (max-width: 700px) {
+  .mobile-slide .portfolio-info {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
   .mobile-slide img {
     width: 60vw;
     max-width: 100%;
@@ -207,12 +211,13 @@
 
   /* 모바일 슬라이더 컨테이너 보이기 */
   .mobile-slider-container {
-    display: block;
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
     width: 100vw;
-    overflow-x: hidden; /* 스크롤 허용 */
-    height: auto; /* 높이 자동 */
+    height: 80vh; /* 높이를 고정하거나 최대 높이 지정 */
+    overflow-x: auto;
+    overflow-y: hidden; /* 세로 스크롤 방지 */
     position: relative;
-    margin-top: 2rem;
     padding: 0; /* 좌우 여백 제거 */
     -webkit-overflow-scrolling: touch; /* iOS 스크롤 부드럽게 */
   }
@@ -222,21 +227,23 @@
     display: flex;
     gap: 0;
     margin: 0;
-    width: max-content;
+    width: auto;
     transition: transform 0.5s ease-in-out;
   }
 
   /* 각 모바일 슬라이드: 전체 화면 너비 고정 */
   .mobile-slide {
-    flex: 0 0 calc(100vw - 2rem);
-    width: calc(100vw - 2rem);
+    flex: 0 0 100vw;
+    width: 100vw;
     box-sizing: border-box;
     padding-left: 1rem;
     padding-right: 1rem;
     margin-bottom: 0;
     overflow-wrap: break-word;
     word-break: break-word;
+    max-height: 80vh; /* 최대 높이 제한 */
     white-space: normal;
+    overflow: hidden; /* 넘치는 내용 숨기기 */
   }
 
   /* 버튼 크기 및 위치 조정 */

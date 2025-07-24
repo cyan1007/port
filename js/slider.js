@@ -182,7 +182,13 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${item.desc}</p>
         </div>
       `;
-
+      div.querySelector(".portfolio-info img").addEventListener("click", () => {
+        if (item.type === "modal") {
+          openSlideModal(item.content || "내용 없음");
+        } else if (item.type === "link") {
+          window.location.href = item.url;
+        }
+      });
       // 모바일 슬라이드 "자세히 보기" 이벤트
       div.querySelector(".view-more").addEventListener("click", () => {
         if (item.type === "modal") {
