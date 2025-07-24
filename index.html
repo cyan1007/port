@@ -246,9 +246,7 @@
               </p>
             </div>
             <div class="box animate" style="transition-delay: 0.4s">
-              <video autoplay muted loop playsinline class="box-bg-video">
-                <source src="video/ani.mp4" type="video/mp4" />
-              </video>
+              <img src="video/ani.gif" alt="gif" />
               <h3>모션 & 영상 디자인</h3>
               <p>
                 브랜드 소개, SNS 영상, 모션 그래픽 등<br />스토리가 있는 영상을
@@ -340,8 +338,14 @@
           <div class="cases-wrapper">
             <div class="clone-cases">
               <div class="case-block clone">
-                <h3>📌 클론 코딩: 삼성화재</h3>
+                <h3>클론 코딩: 삼성화재</h3>
                 <div class="case">
+                  <div class="case-image">
+                    <img
+                      src="images/cont4/samsung.png"
+                      alt="삼성화재 클론 작업물"
+                    />
+                  </div>
                   <div class="case-desc">
                     <p>
                       삼성화재 공식 사이트 메인 페이지를 그대로 구현했습니다.
@@ -364,8 +368,14 @@
 
               <!-- ✅ 클론 코딩 2 -->
               <div class="case-block clone">
-                <h3>📌 클론 코딩: 국제커리어센터</h3>
+                <h3>클론 코딩: 국제커리어센터</h3>
                 <div class="case">
+                  <div class="case-image">
+                    <img
+                      src="images/cont4/kjcareer.png"
+                      alt="삼성화재 클론 작업물"
+                    />
+                  </div>
                   <div class="case-desc">
                     <p>국제 커리어 센터 메인 페이지를 그대로 구현했습니다.</p>
                     <button
@@ -388,21 +398,25 @@
             <!-- ✅ 리디자인 1 -->
             <div class="redesign-cases">
               <div class="case-block redesign">
-                <h3>🛠 리디자인: 쇼핑앱</h3>
+                <h3>리디자인: S리더 치과병원</h3>
                 <div class="case">
                   <div class="case-images">
                     <div class="before">
                       <h4>Before</h4>
                       <img
-                        src="images/redesign/before1.jpg"
+                        src="images/cont4/before.png"
                         alt="Before Design"
+                        class="open-modal-img"
+                        data-modal="modal-sreader-before"
                       />
                     </div>
                     <div class="after">
                       <h4>After</h4>
                       <img
-                        src="images/redesign/after1.jpg"
+                        src="images/cont4/after.png"
                         alt="After Design"
+                        class="open-modal-img"
+                        data-modal="modal-sreader-after"
                       />
                     </div>
                   </div>
@@ -417,21 +431,25 @@
 
               <!-- ✅ 리디자인 2 -->
               <div class="case-block redesign">
-                <h3>🛠 리디자인: 날씨 앱</h3>
+                <h3>리디자인: 충주시 문화관광</h3>
                 <div class="case">
                   <div class="case-images">
                     <div class="before">
-                      <h4>Before</h4>
+                      <p>Before</p>
                       <img
-                        src="images/redesign/before2.jpg"
+                        src="images/cont4/before2.png"
                         alt="Before Design"
+                        class="open-modal-img"
+                        data-modal="modal-chungju-before"
                       />
                     </div>
                     <div class="after">
-                      <h4>After</h4>
+                      <p>After</p>
                       <img
-                        src="images/redesign/after2.jpg"
-                        alt="After Design"
+                        src="images/cont4/after2.jpg"
+                        alt="Before Design"
+                        class="open-modal-img"
+                        data-modal="modal-chungju-after"
                       />
                     </div>
                   </div>
@@ -459,10 +477,7 @@
         <div id="modal-samsung-clone" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <iframe
-              src="링크_또는_내_작업_경로/index.html"
-              frameborder="0"
-            ></iframe>
+            <iframe src="https://samclone.vercel.app/" frameborder="0"></iframe>
           </div>
         </div>
 
@@ -477,10 +492,39 @@
         <div id="modal-kjcareer-clone" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <iframe
-              src="내_작업_경로/netflix-clone/index.html"
-              frameborder="0"
-            ></iframe>
+            <iframe src="https://kjcareer.vercel.app/" frameborder="0"></iframe>
+          </div>
+        </div>
+
+        <!-- 리디자인 BEFORE 모달: S리더 치과 -->
+        <div id="modal-sreader-before" class="modal">
+          <div class="modal-content image-only">
+            <span class="close">&times;</span>
+            <img src="images/cont4/before.png" alt="Before" />
+          </div>
+        </div>
+
+        <!-- 리디자인 AFTER 모달: S리더 치과 -->
+        <div id="modal-sreader-after" class="modal">
+          <div class="modal-content image-only">
+            <span class="close">&times;</span>
+            <img src="images/cont4/after.png" alt="After" />
+          </div>
+        </div>
+
+        <!-- 충주시 문화관광 before -->
+        <div id="modal-chungju-before" class="modal">
+          <div class="modal-content image-only">
+            <span class="close">&times;</span>
+            <img src="images/cont4/before2.png" alt="Before" />
+          </div>
+        </div>
+
+        <!-- 충주시 문화관광 after -->
+        <div id="modal-chungju-after" class="modal">
+          <div class="modal-content image-only">
+            <span class="close">&times;</span>
+            <img src="images/cont4/after2.jpg" alt="After" />
           </div>
         </div>
       </section>

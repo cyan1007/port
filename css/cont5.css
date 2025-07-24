@@ -195,3 +195,53 @@
     flex-direction: column;
   }
 }
+.case-images {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* ✅ 데스크탑용 기본 간격 */
+}
+.case-images img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.case-images img:hover {
+  transform: scale(1.03);
+}
+
+.case-images .before,
+.case-images .after {
+  flex: 1 1 48%;
+  text-align: center;
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+  .case-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* ✅ 간격 줄이기 */
+    padding: 0;
+    margin: 0;
+  }
+
+  .case-images .before,
+  .case-images .after {
+    width: 100%;
+    max-width: 500px; /* ✅ 지나치게 커지는 것 방지 */
+    margin: 0;
+    padding: 0;
+  }
+
+  .case-images img {
+    max-height: 200px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    line-height: 0;
+  }
+}

@@ -9,6 +9,19 @@ function updateMode() {
   container.classList.remove("desktop-active", "mobile-active");
   container.classList.add(isMobile ? "mobile-active" : "desktop-active");
 }
+function updateDesktopSlides() {
+  const total = slides.length;
+  const prevIndex = (currentIndex - 1 + total) % total;
+  const nextIndex = (currentIndex + 1) % total;
+
+  slides.forEach((slide, i) => {
+    slide.classList.remove("prev", "active", "next", "inactive");
+    if (i === currentIndex) slide.classList.add("active");
+    else if (i === prevIndex) slide.classList.add("prev");
+    else if (i === nextIndex) slide.classList.add("next");
+    else slide.classList.add("inactive");
+  });
+}
 
 const slideSets = {
   set1: [
@@ -41,7 +54,8 @@ const slideSets = {
       desc: "협업한 리디자인 프로세스 입니다.",
       img: "images/cont3/sreader.png",
       type: "modal",
-      content: `<img src="/images/cont3/s-process.jpg">
+      content: `<img src="/images/cont3/ppt.jpg">
+      <img src="/images/cont3/s-process.jpg">
       <h3>웹 사이트를</h3><p>협업해서 리디자인 하고자 한 기획입니다.</p>`,
     },
     {
@@ -56,23 +70,23 @@ const slideSets = {
     {
       title: "웹 디자인 1",
       desc: "애니메이션 웹사이트 입니다.",
-      img: "https://unsplash.it/600/400?random=21",
+      img: "images/cont3/ani.png",
       type: "link",
-      url: "https://example.com/project1",
+      url: "ani.html",
     },
     {
       title: "웹 디자인 2",
       desc: "음악 플레이어 재생이 가능한 웹사이트 입니다.",
-      img: "https://unsplash.it/600/400?random=22",
+      img: "images/cont3/music.png",
       type: "link",
-      url: "https://example.com/project1",
+      url: "music.html",
     },
     {
       title: "웹 디자인 3",
       desc: "비디오를 재생가능한 웹사이트 입니다.",
-      img: "https://unsplash.it/600/400?random=23",
+      img: "images/cont3/flex.png",
       type: "link",
-      url: "https://example.com/project1",
+      url: "videoflex.html",
     },
     {
       title: "웹 디자인 4",
@@ -83,9 +97,9 @@ const slideSets = {
     },
     {
       title: "추가예정",
-      desc: "더 만들어지면 추후 추가 하겠습니다.",
-      img: "https://unsplash.it/600/400?random=25",
-      type: "link",
+      desc: "작품이 추가되는대로 추가 하겠습니다.",
+      img: "images/cont3/coming.jpg",
+      type: "modal",
       url: "https://example.com/project1",
     },
   ],
@@ -93,32 +107,74 @@ const slideSets = {
     {
       title: "그래픽 디자인 1",
       desc: "sns 카드뉴스 입니다.",
-      img: "https://unsplash.it/600/400?random=31",
+      img: "images/cont3/card-sum.png",
+      type: "modal",
+      content: `<h3>sns 카드뉴스</h3>  
+      <img src="/images/cont3/card.jpg">
+      <p>리뷰 이벤트 안내 카드뉴스 입니다.</p>`,
     },
     {
       title: "그래픽 디자인 2",
       desc: "sns 카드뉴스 입니다.",
-      img: "https://unsplash.it/600/400?random=32",
+      img: "images/cont3/card2-sum.png",
+      type: "modal",
+      content: `<h3>복고시장 sns 카드뉴스</h3>  
+      <img src="/images/cont3/card2.jpg">
+      <p>복고시장 안내 카드뉴스 입니다.</p>`,
     },
     {
       title: "그래픽 디자인 3",
-      desc: "상세페이지 입니다.",
-      img: "https://unsplash.it/600/400?random=33",
+      desc: "sns 배너 입니다.",
+      img: "images/cont3/sns.png",
+      type: "modal",
+      content: `<h3>sns 배너</h3>  
+      <img src="/images/cont3/sns-ba.jpg">
+      <p>잔반제로 캠페인 sns 배너입니다.</p>`,
     },
     {
       title: "그래픽 디자인 4",
-      desc: "상세페이지 입니다.",
-      img: "https://unsplash.it/600/400?random=34",
+      desc: "아이리버 헤드셋 상세페이지 입니다.",
+      img: "images/cont3/head-sum.png",
+      type: "modal",
+      content: `<h3>아이리버 헤드셋</h3>  
+      <img src="/images/cont3/head.jpg">
+      <p>아이리버 헤드셋 상세페이지를 작업한 내용입니다.</p>`,
     },
     {
       title: "그래픽 디자인 5",
-      desc: "제품포스터 입니다.",
-      img: "https://unsplash.it/600/400?random=35",
+      desc: "상세페이지 입니다.",
+      img: "images/cont3/han-sum.png",
+      type: "modal",
+      content: `<h3>한율 어린싹 수분진정 크림</h3>  
+      <img src="/images/cont3/han.jpg">
+      <p>한율 어린썩 수분진정 크림 상세페이지를 작업한 내용입니다.</p>`,
     },
     {
       title: "그래픽 디자인 6",
-      desc: "추후 작품이 더 나오면 추가 예정입니다.",
-      img: "https://unsplash.it/600/400?random=35",
+      desc: "제품포스터 입니다.",
+      img: "images/cont3/gel-sum.jpg",
+      type: "modal",
+      content: `<h3>저자극 각질제거 필링 젤</h3>  
+      <img src="/images/cont3/gel.jpg">
+      <p>각질제거 필링 젤 제품 포스터를 작업한 내용입니다.</p>`,
+    },
+    {
+      title: "그래픽 디자인 7",
+      desc: "제품포스터 입니다.",
+      img: "images/cont3/edit.png",
+      type: "modal",
+      content: `<h3>저자극 각질제거 필링 젤</h3>  
+      <img src="/images/cont3/editorial.jpg">
+      <p>히비스커스 에이드 제품 포스터를 작업한 내용입니다.</p>`,
+    },
+    {
+      title: "그래픽 디자인 8",
+      desc: "제품포스터 입니다.",
+      img: "images/cont3/edit.png",
+      type: "modal",
+      content: `<h3>저자극 각질제거 필링 젤</h3>  
+      <img src="/images/cont3/editorial.jpg">
+      <p>히비스커스 에이드 제품 포스터를 작업한 내용입니다.</p>`,
     },
   ],
 };
@@ -206,20 +262,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileIndex = 0;
     updateDesktopSlides();
     updateMobileSlides();
-  }
-
-  function updateDesktopSlides() {
-    const total = slides.length;
-    const prevIndex = (currentIndex - 1 + total) % total;
-    const nextIndex = (currentIndex + 1) % total;
-
-    slides.forEach((slide, i) => {
-      slide.classList.remove("prev", "active", "next", "inactive");
-      if (i === currentIndex) slide.classList.add("active");
-      else if (i === prevIndex) slide.classList.add("prev");
-      else if (i === nextIndex) slide.classList.add("next");
-      else slide.classList.add("inactive");
-    });
   }
 
   function updateMobileSlides() {

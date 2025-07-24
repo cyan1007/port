@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #b1e1e2;
+  animation: sky linear 20s infinite;
+}
+
+h1 {
+  position: absolute;
+  width: 1000px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  font-size: 92px;
+  line-height: 1;
+  text-align: center;
+  color: #fff;
+  font-family: "Poiret One";
+  animation: day linear 20s infinite;
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  width: 1000px;
+  height: 400px;
+  /* border: 1px solid #000; */
+}
+.sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.sun {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  margin-left: -100px;
+  transform-origin: center 500px;
+  animation: sun linear 20s infinite;
+}
+
+.cloud1 {
+  position: absolute;
+  top: -30px;
+  left: 10%;
+  animation: flow linear 10s infinite;
+}
+.cloud2 {
+  position: absolute;
+  top: 20px;
+  left: 0%;
+  animation: flow linear 20s infinite;
+}
+.circle {
+  position: absolute;
+  bottom: 104px;
+  left: 50%;
+  margin-left: -165px;
+  opacity: 0.7;
+  animation: rotation linear 20s infinite;
+}
+.night {
+  position: absolute;
+  bottom: 0px;
+  left: 40px;
+}
+.day {
+  position: absolute;
+  bottom: 0px;
+  left: 40px;
+  animation: day linear 20s infinite;
+}
+.people {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: day linear 20s infinite;
+}
+.man {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: flow linear 7s infinite;
+}
+.family {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: flow linear 20s infinite;
+}
+/* 회전 키프레임 */
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* 하늘 색을 변경하는 키프레임 */
+@keyframes sky {
+  0% {
+    background-color: #b08fcc;
+  }
+  25% {
+    background-color: #b1e1e2;
+  }
+  50% {
+    background-color: #fcd2e2;
+  }
+  75% {
+    background-color: #636888;
+  }
+  100% {
+    background-color: #b98fcc;
+  }
+}
+
+@keyframes flow {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 90%;
+    opacity: 0;
+  }
+}
+
+/* 태양이 회전하는 키프레임 */
+@keyframes sun {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  25% {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(30deg);
+  }
+  75% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+}
+
+/* 밤에 특정 요소름 숨기는 키프레임 */
+@keyframes day {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #00f6ff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 999;
+}

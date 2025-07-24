@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #000;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  letter-spacing: -0.23px;
+  font-family: "arial", sans-serif;
+  word-break: break-all;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+}
+.aside {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6rem 4rem;
+  z-index: 3;
+}
+.logo {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 2rem 0;
+  background-color: #999;
+}
+.logo i {
+  font-size: 5vw;
+  margin-bottom: 1.5rem;
+}
+.logo a {
+}
+.logo a span {
+  font-size: 2vw;
+  color: #fff;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #666;
+}
+.copy {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #fff;
+  font-style: italic;
+}
+
+.nav {
+  position: absolute;
+  top: 7rem;
+  right: 10rem;
+  z-index: 3;
+}
+.nav ul {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.nav ul li {
+}
+.nav ul li a {
+  font-size: 1.6rem;
+  color: #bbb;
+}
+
+.main {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  padding-top: 14rem;
+  gap: 2rem;
+  z-index: 1;
+}
+.card {
+  position: relative;
+  flex: 1;
+  padding: 7rem 4rem 10rem;
+  opacity: 0.6;
+  z-index: 1;
+  transition: all 1s;
+  cursor: pointer;
+  /* background-color: #888; */
+}
+.card:hover {
+  flex: 1.5;
+  opacity: 1;
+  z-index: 2;
+}
+.card::before {
+  position: absolute;
+  left: -200px;
+  top: 0;
+  content: "";
+  display: block;
+  width: 80%;
+  height: 95%;
+  background-color: #444;
+  opacity: 0;
+  transition: all 1s;
+}
+.card:hover::before {
+  left: 0;
+  opacity: 1;
+}
+
+.card .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .inner .text {
+  position: relative;
+  width: 100%;
+  transition: all 1s;
+}
+.card:hover .inner .text {
+  width: 75%;
+}
+.card .inner .text h2 {
+  font-size: 2.4rem;
+  color: #fff;
+  padding-top: 7rem;
+  margin-bottom: 4rem;
+  transition: all 1s;
+}
+.card .inner .text h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #777;
+  margin-top: 2rem;
+  transition: all 1.5s;
+}
+.card:hover .inner .text h2 {
+  font-size: 5rem;
+  padding-top: 0;
+}
+.card:hover .inner .text h2::after {
+  width: 120px;
+  background-color: orange;
+}
+.card .inner .text p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  word-break: break-all;
+  color: #999;
+}
+.card .inner .video {
+  position: relative;
+  width: 100%;
+  height: 15rem;
+  overflow: hidden;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  filter: saturate(0.1);
+  transition: all 1s;
+}
+.card .inner .video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card:hover .inner .video {
+  height: 25rem;
+  transform: translateY(3rem);
+  filter: saturate(1.2);
+}
+
+#modal {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  /* left: 0; */
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+  z-index: 2;
+  padding: 20vh 7vw 14vh 20vw;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: all 1s;
+}
+#modal.active {
+  left: 0;
+  opacity: 1;
+}
+#modal .text {
+  position: relative;
+  width: 25%;
+  height: 100%;
+}
+#modal .text h1 {
+  font-size: 6rem;
+  color: #ddd;
+  margin-bottom: 2rem;
+}
+#modal .text p {
+  font-size: 2rem;
+  color: #666;
+  margin-bottom: 6rem;
+  word-break: break-all;
+}
+#modal .text span {
+  cursor: pointer;
+  color: orange;
+  font-size: 1.6rem;
+}
+#modal .video {
+  position: relative;
+  width: 72%;
+  height: 100%;
+}
+#modal .video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #9c9c9c;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 999;
+}

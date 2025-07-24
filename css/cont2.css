@@ -37,7 +37,9 @@
   color: var(--color-accent);
   box-shadow: var(--color-shadow); /* 그대로 유지 */
   width: 30vw;
-  height: 60vh;
+  /* height: 60vh; */
+  min-height: 300px; /* 최소 높이 지정 */
+  max-height: 600px; /* 최대 높이 제한, 필요하면 조절 */
   border-radius: 10px;
 
   padding: 2rem;
@@ -103,18 +105,27 @@
   color: var(--color-text-muted);
 }
 
-/* ✅ 반응형 - 화면 작아지면 세로 정렬 */
-@media (max-width: 950px) {
-  .cont2 {
-    height: 100%;
-  }
+/* 998px 이하에서 .box-row를 2열 그리드로 강제 고정 */
+@media (max-width: 998px) {
   .box-row {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 고정 */
+    gap: 20px 30px; /* 행과 열 간격 조절 */
+    justify-content: center; /* 가운데 정렬 */
   }
 
   .box {
-    width: 90%;
+    width: 100%;
     max-width: 400px;
+    height: auto;
+    min-height: 300px;
+    max-height: none; /* 그리드에 맞게 높이 자유롭게 */
+  }
+}
+
+/* 더 작은 화면 (예: 600px 이하)에서는 1열로 바꾸기 */
+@media (max-width: 600px) {
+  .box-row {
+    grid-template-columns: 1fr;
   }
 }
