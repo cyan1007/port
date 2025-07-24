@@ -40,14 +40,20 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
-  color: var(--text-light);
+  color: var(--color-text-white);
   line-height: 1.3;
 }
 
-.intro-right .highlight {
-  color: var(--accent);
+.intro-right span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--color-text-white);
+  line-height: 1.3;
 }
-
+.intro-right .highlight {
+  color: var(--color-text-white) !important;
+}
 .intro-text {
   font-size: 1.1rem;
   line-height: 1.8;

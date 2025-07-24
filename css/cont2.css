@@ -10,8 +10,8 @@
 
 .cont2 .neon-text {
   margin-bottom: 60px;
-  font-size: 2.5rem;
-  color: var(--color-accent);
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  color: var(--color-text-white);
 }
 
 .box-wrap {
@@ -31,6 +31,8 @@
 }
 
 .box {
+  position: relative;
+  overflow: hidden;
   background: var(--color-box-bg); /* 어두운 박스 배경 */
   color: var(--color-accent);
   box-shadow: var(--color-shadow); /* 그대로 유지 */
@@ -44,18 +46,42 @@
   align-items: center; /* 제목 가운데 */
   justify-content: center;
   text-align: center;
-
+  min-width: 300px;
   transform: translateY(50px);
   opacity: 0;
   transition: transform 0.6s ease, opacity 0.6s ease;
   flex-shrink: 0; /* ✅ 잘리는 것 방지 */
 }
 
+.box h3,
+.box p {
+  position: relative;
+  z-index: 1; /* 텍스트가 영상 위로 나오도록 */
+}
+
+.box.animate img,
+.box.animate video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* ✅ 꽉 채우기 */
+  height: 100%; /* ✅ 꽉 채우기 */
+  object-fit: cover; /* ✅ 비율 유지하며 박스 채우기 */
+  z-index: 0;
+  opacity: 0.3;
+  transform: none; /* ✅ 가운데 정렬 제거 (필요 없음) */
+}
 .box.animate {
   transform: translateY(0);
   opacity: 1;
 }
 
+.box:hover img {
+  opacity: 0.7;
+}
+.box:hover video {
+  opacity: 0.7;
+}
 .box h3 {
   margin-bottom: 20px;
   font-size: 1.5rem;
@@ -63,6 +89,12 @@
   color: var(--color-accent);
 }
 
+.box:hover h3 {
+  display: none;
+}
+.box:hover p {
+  display: none;
+}
 .box p {
   text-align: left; /* 본문은 왼쪽 정렬 */
   max-width: 90%;

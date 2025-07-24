@@ -1,12 +1,12 @@
 .cont4 {
   padding: 80px 20px;
-  background-color: #111;
-  color: #fff;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   text-align: center; /* 제목 가운데 정렬 */
 }
 
 .cont4 h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
   margin-bottom: 40px;
 }
 .cases-wrapper {
@@ -24,11 +24,11 @@
   flex: 1 1 0;
 }
 .case-block {
-  background: #222; /* 필요하면 배경 넣기 */
+  background: var(--bg-dark); /* 필요하면 배경 넣기 */
   padding: 1.5rem;
   border-radius: 10px;
   text-align: left; /* 내부 왼쪽 정렬 유지 */
-  box-shadow: 0 0 10px rgba(0, 246, 255, 0.3);
+  box-shadow: 0 0 10px var(--color-shadow-cyan-55);
 }
 .redesign-cases {
   display: flex;
@@ -84,14 +84,14 @@
 }
 
 .modal-content {
-  background-color: #111;
+  background-color: var(--bg-dark);
   margin: 5% auto;
   padding: 1.5rem;
   border-radius: 8px;
   width: 90%;
   max-width: 1100px;
   position: relative;
-  color: #fff;
+  color: var(--text-light);
 }
 
 .modal .close {
@@ -100,7 +100,7 @@
   right: 20px;
   font-size: 2rem;
   cursor: pointer;
-  color: #fff;
+  color: var(--text-light);
 }
 
 .modal iframe {
@@ -165,7 +165,8 @@
 }
 
 .cont4-inner {
-  max-width: 1200px;
+  min-width: 300px;
+  max-width: 768px;
   margin: 0 auto;
   text-align: center;
   padding: 0 1rem;

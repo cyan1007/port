@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+.main {
+  position: relative;
+  margin-left: 400px;
+  padding: 20px;
+}
+
+.sorting {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sorting li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 2.6rem;
+  font-size: 1.1rem;
+  color: #aaa;
+  line-height: 1;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.sorting li:hover a {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.sorting li.on a {
+  color: #fff;
+  background: linear-gradient(to top, #3ecbf7, #0a1fdf);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.section article {
+  position: relative;
+  width: 20%;
+  padding: 1.2rem;
+  cursor: pointer;
+}
+.section article div {
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
+  padding: 1.4rem;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+.section article:hover div {
+  transform: translateY(-10px);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.section article div img {
+  width: 100%;
+}
+.section article div h2 {
+  font-size: 1.6rem;
+  margin: 1.4rem 0 0.8rem;
+}
+.section article div p {
+  font-size: 1.4rem;
+  line-height: 1.25;
+  color: #777;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  display: none;
+}
+#modal.active {
+  display: block;
+}
+.modal-inner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  font-size: 1.6rem;
+  padding: 20px;
+}
+.modal-close {
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  font-weight: bold;
+}

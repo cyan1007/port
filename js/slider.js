@@ -2,6 +2,13 @@ let currentIndex = 0;
 let mobileIndex = 0;
 let slides = [];
 let mobileSlides = [];
+function updateMode() {
+  const container = document.querySelector(".cont3");
+  if (!container) return;
+  const isMobile = window.innerWidth <= 700;
+  container.classList.remove("desktop-active", "mobile-active");
+  container.classList.add(isMobile ? "mobile-active" : "desktop-active");
+}
 
 const slideSets = {
   set1: [
@@ -11,38 +18,38 @@ const slideSets = {
       img: "images/cont3/nuri.jpg",
       type: "modal",
       content: `<h3>브랜드 기획 발표내용</h3>  
-      <iframe 
-    src="documents/eumnuri.pdf" 
-    width="100%" 
-    height="600px" 
-    style="border: none;">
-  </iframe><p>이음누리 도서관 어플을 기획하면서 한 발표 내용입니다.</p>`,
+      <img src="/images/cont3/eumnuri.jpg">
+      <p>이음누리 도서관 어플을 기획하면서 한 발표 내용입니다.</p>`,
     },
     {
       title: "앱 디자인 1",
       desc: "밥플릭스 어플 기획 팀 프로젝트",
-      img: "https://unsplash.it/600/400?random=12",
+      img: "images/cont3/intro.png",
       type: "modal",
-      content: `<h3>밥플릭스</h3><p>팀프로젝트 어플 기획 내용입니다.</p>`,
+      content: `<img src="/images/cont3/process.png">
+      <h3>밥플릭스</h3><p>팀프로젝트 어플 기획 내용입니다.</p>`,
     },
     {
       title: "앱 디자인 2",
       desc: "개인 어플 제작 기획(추가예정)",
-      img: "https://unsplash.it/600/400?random=13",
+      img: "images/cont3/coming.jpg",
       type: "modal",
       content: `<h3>개인적으로</h3><p>어플을 제작 기획한 내용입니다.</p>`,
     },
     {
       title: "협업 리디자인 계획",
       desc: "협업한 리디자인 프로세스 입니다.",
-      img: "https://unsplash.it/600/400?random=14",
+      img: "images/cont3/sreader.png",
       type: "modal",
-      content: `<h3>웹 사이트를</h3><p>협업해서 리디자인 하고자 한 기획입니다.</p>`,
+      content: `<img src="/images/cont3/s-process.jpg">
+      <h3>웹 사이트를</h3><p>협업해서 리디자인 하고자 한 기획입니다.</p>`,
     },
     {
       title: "추가예정",
       desc: "작품이 추가되는대로 추가 하겠습니다.",
-      img: "https://unsplash.it/600/400?random=14",
+      img: "images/cont3/coming.jpg",
+      type: "modal",
+      content: `<h3>개인적으로</h3><p>어플을 제작 기획한 내용입니다.</p>`,
     },
   ],
   set2: [
@@ -70,9 +77,9 @@ const slideSets = {
     {
       title: "웹 디자인 4",
       desc: "반응형 포트폴리오용 웹사이트 입니다.",
-      img: "https://unsplash.it/600/400?random=24",
+      img: "images/cont3/pot.png",
       type: "link",
-      url: "https://pot-liblary.vercel.app/",
+      url: "pot.html",
     },
     {
       title: "추가예정",
@@ -122,12 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".prev-btn");
   const nextBtn = document.querySelector(".next-btn");
   const container = document.querySelector(".cont3");
-
-  function updateMode() {
-    const isMobile = window.innerWidth <= 700;
-    container.classList.remove("desktop-active", "mobile-active");
-    container.classList.add(isMobile ? "mobile-active" : "desktop-active");
-  }
 
   function renderSlides(setKey) {
     const slideData = slideSets[setKey];
@@ -187,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (item.type === "modal") {
           openSlideModal(item.content || "내용 없음");
         } else if (item.type === "link") {
-          window.open(item.url, "_blank");
+          window.location.href = item.url; // 현재 탭에서 열기
         }
       });
 
@@ -301,3 +302,15 @@ function initSlideModalEvents() {
     if (e.key === "Escape") modal.style.display = "none";
   });
 }
+
+window.addEventListener("resize", () => {
+  updateMode();
+
+  // 인덱스 초기화
+  currentIndex = 0;
+  mobileIndex = 0;
+
+  // 슬라이드 상태 갱신
+  updateDesktopSlides();
+  updateMobileSlides();
+});

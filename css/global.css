@@ -30,17 +30,20 @@
   --color-text-gray: #aaa;
   --color-text-muted: #ccc;
   --color-text-dark: #000;
-
+  --color-text-main: var(--color-accent);
   --color-gradient-start: #00f6ff;
   --color-gradient-end: #00d0ff;
 
   --color-sub-accent: #c5faff;
 
+  --card-gradient: #0d0d0d;
+  --card-gradient-end: #1c1c1c;
   --color-shadow-black-30: rgba(0, 0, 0, 0.3);
   --color-shadow-cyan-55: #00f6ff55;
   --color-shadow-cyan-glow-from: #00f6ff;
   --color-shadow-cyan-glow-to: #00ffff;
 
+  --header-dark: rgba(0, 0, 0, 0.7);
   --color-box-bg: #111111;
   --color-border: #00f6ff44;
   --color-shadow: rgba(0, 246, 255, 0.2);
@@ -74,11 +77,14 @@ body.light-mode {
 
   --color-sub-accent: #005fa3;
 
+  --card-gradient: #ffffff;
+  --card-gradient-end: #dfdfdf;
   --color-shadow-black-30: rgba(0, 0, 0, 0.05);
   --color-shadow-cyan-55: #005fa355;
   --color-shadow-cyan-glow-from: #0077cc;
   --color-shadow-cyan-glow-to: #005fa3;
 
+  --header-dark: rgba(255, 255, 255, 0.7);
   --color-box-bg: #f9f9f9;
   --color-border: #cccccc;
   --color-shadow: rgba(0, 0, 0, 0.05);

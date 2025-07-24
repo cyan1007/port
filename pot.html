@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 웹페이지 설명 -->
+    <meta
+      name="description"
+      content="Miko의 포트폴리오 웹사이트입니다. 반응형 웹 디자인, 웹 퍼블리싱, 영상 편집 등 다양한 작업물을 확인하실 수 있습니다."
+    />
+    <!-- 웹페이지와 관련된 키워드를 정의 -->
+    <meta
+      name="keywords"
+      content="반응형, 웹퍼블리싱, 웹퍼블리셔, 영상, 멀티미디어, 영상편집, 포트폴리오, 웹디자인"
+    />
+    <!-- 검색 엔진 크롤링 설정 -->
+    <meta name="robots" content="index, follow" />
+    <!-- canonical URL -->
+    <link rel="canonical" href="https://reponsive-page-sample.vercel.app/" />
+    <!-- 소셜 미디어에서 페이지가 공유될 때 사용되는 제목 -->
+    <meta property="og:title" content="Andrew의 포트폴리오 웹사이트" />
+    <!-- 소셜 미디어에서 페이지가 공유될 때 표시되는 사이트 이름 -->
+    <meta property="og:site_name" content="Andrew의 웹사이트" />
+    <!-- 소셜 미디어에서 페이지가 웹사이트임을 명시 -->
+    <meta property="og:type" content="website" />
+    <!-- Open Graph 프로토콜에서 사용되는 메타 태그의 속성 중 하나로, 페이지의 간략한 설명을 제공하는 데 사용 -->
+    <!-- 소셜 미디어에서 공유될 때 사용되는 URL -->
+    <meta
+      property="og:url"
+      content="https://reponsive-page-sample.vercel.app/"
+    />
+    <!-- 소셜 미디어에서 페이지가 공유될 때 표시되는 이미지 -->
+    <meta property="og:image" content="img/preview-img.png" />
+    <!-- 소셜 미디어에서 페이지가 공유될 때 사용되는 설명 -->
+    <meta
+      property="og:description"
+      content="miko의 포트폴리오 웹사이트입니다. 반응형 웹 디자인, 웹 퍼블리싱, 영상 편집 등 다양한 작업물을 확인하실 수 있습니다."
+    />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="img/preview-img.png" />
+    <meta name="twitter:title" content="miko의 포트폴리오 웹사이트" />
+    <meta
+      name="twitter:description"
+      content="miko의 포트폴리오 웹사이트입니다. 반응형 웹 디자인, 웹 퍼블리싱, 영상 편집 등 다양한 작업물을 확인하실 수 있습니다."
+    />
+    <meta name="twitter:image" content="img/preview-img.png" />
+    <title>반응형 웹페이지 실습 스터디</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/header/header.css" />
+    <link rel="stylesheet" href="css/main/main.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- isotope -->
+    <script
+      src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+      defer
+    ></script>
+    <!-- <script src="js/isotope.pkgd.min.js" defer></script> -->
+    <script src="js/pot.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>ANDREW SUMMER</h1>
+      <ul>
+        <li>
+          <a href="#">E-mail</a>
+        </li>
+        <li>
+          <a href="#">GitHub</a>
+        </li>
+        <li>
+          <a href="#">YouTube</a>
+        </li>
+        <li>
+          <a href="#">Notion</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="main">
+      <!-- sorting -->
+      <!-- 웹디자인 프로젝트의 상단에 -->
+      <button onclick="location.href='index.html'" class="back-btn">
+        ← 돌아가기
+      </button>
+
+      <ul class="sorting">
+        <li class="on"><a href="*">전체보기</a></li>
+        <li><a href=".odd">홀수보기</a></li>
+        <li><a href=".even">짝수보기</a></li>
+      </ul>
+
+      <section class="section">
+        <article class="odd">
+          <div>
+            <img src="images/pot/p1.jpg" alt="이미지1" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p2.jpg" alt="이미지2" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p3.jpg" alt="이미지3" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p4.jpg" alt="이미지4" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p5.jpg" alt="이미지5" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p6.jpg" alt="이미지6" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p7.jpg" alt="이미지7" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p8.jpg" alt="이미지8" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p9.jpg" alt="이미지9" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p10.jpg" alt="이미지10" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p11.jpg" alt="이미지11" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p12.jpg" alt="이미지12" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p13.jpg" alt="이미지13" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p14.jpg" alt="이미지14" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p15.jpg" alt="이미지15" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p16.jpg" alt="이미지16" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p17.jpg" alt="이미지17" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p18.jpg" alt="이미지18" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="odd">
+          <div>
+            <img src="images/pot/p19.jpg" alt="이미지19" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+        <article class="even">
+          <div>
+            <img src="images/pot/p20.jpg" alt="이미지20" />
+            <h2>제목입니다.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              unde ad quae ea doloribus rem similique, voluptate nam incidunt
+              atque tempora quam. Quam odio facilis omnis eum nesciunt, velit
+              ab.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- modal -->
+    <div id="modal">
+      <div class="modal-inner">
+        <p>
+          이 사이트는 스터디 목적으로 제작되었습니다. 문제 발생 시 연락 주시면
+          조치하겠습니다.
+        </p>
+        <div class="modal-close">CLOSE</div>
+      </div>
+    </div>
+  </body>
+</html>

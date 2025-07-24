@@ -71,42 +71,6 @@
 }
 
 /* ------------------------------
-   모바일 슬라이더 (≤700px)
--------------------------------- */
-.mobile-slider-container {
-  display: none;
-  width: 100vw;
-  height: auto; /* 자동 높이로 변경 */
-  overflow: hidden;
-  position: relative;
-  margin-top: 2rem;
-  padding: 1rem 0;
-}
-
-.mobile-slider {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-
-.mobile-slide {
-  flex: 0 0 100%;
-  height: 100%;
-  background: var(--color-box-bg); /* 흰색 대신 변수 */
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  overflow: hidden; /* 넘치는 콘텐츠 잘림 방지 */
-}
-
-/* ------------------------------
    공통 슬라이드 내부 스타일
 -------------------------------- */
 .portfolio-info {
@@ -115,6 +79,7 @@
   transition: all 0.5s ease;
   position: relative;
   box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
+  overflow: hidden;
 }
 
 .slide.active .portfolio-info {
@@ -125,7 +90,7 @@
 .portfolio-info img {
   width: 90%;
   height: auto;
-  max-height: 50vh;
+  max-height: 40vh;
   border-radius: 1rem;
   object-fit: contain;
   display: block;
@@ -219,19 +184,57 @@
   background: var(--color-accent);
   color: black;
 }
-
+.cont3.desktop-active .mobile-slider-container {
+  display: none !important;
+}
 /* ------------------------------
    미디어쿼리
 -------------------------------- */
 @media (max-width: 700px) {
-  .slider-container {
+  .cont3.mobile-active .mobile-slider-container {
+    display: block !important;
+  }
+  .cont3.mobile-active .slider-container {
     display: none !important;
   }
 
+  /* 모바일 슬라이더 컨테이너 보이기 */
   .mobile-slider-container {
-    display: block !important;
+    display: block;
+    width: 100vw;
+    overflow: hidden; /* 스크롤바 숨기기 */
+    height: auto; /* 높이 자동 */
+    position: relative;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    -webkit-overflow-scrolling: touch; /* iOS 스크롤 부드럽게 */
   }
 
+  /* 모바일 슬라이드 전체 행 */
+  .mobile-slider {
+    display: flex;
+    flex-direction: row;
+    width: max-content; /* 내부 슬라이드 개수에 따라 넓어짐 */
+    gap: 1rem;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* 각 모바일 슬라이드: 전체 화면 너비 고정 */
+  .mobile-slide {
+    flex: 0 0 100vw; /* 컨테이너 너비와 같게 고정 */
+    box-sizing: border-box;
+    scroll-snap-align: center;
+    background: var(--color-box-bg);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* 버튼 크기 및 위치 조정 */
   .prev-btn {
     left: 1rem;
   }
@@ -244,15 +247,31 @@
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
   }
-}
 
-@media (min-width: 701px) {
-  .slider-container {
-    display: flex !important;
+  /* 모바일 슬라이드 내 버튼들 */
+  .mobile-buttons {
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
   }
 
-  .mobile-slider-container {
-    display: none !important;
+  .mobile-buttons .btn-view,
+  .mobile-buttons .btn-work {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    background: var(--color-accent);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .mobile-buttons .btn-view:hover,
+  .mobile-buttons .btn-work:hover {
+    background-color: var(--color-accent-hover);
   }
 }
 
@@ -331,7 +350,8 @@
 
 #slide-modal .modal-content {
   position: relative;
-  max-width: 600px;
+  width: 90vw;
+  height: 90vh;
   margin: 10% auto;
   padding: 2rem;
   background: var(--color-box-bg);
@@ -344,6 +364,12 @@
   color: var(--color-box-bg);
 }
 
+#slide-modal .modal-body img {
+  width: 100%; /* 모달 내용 영역 가로폭에 맞춤 */
+  height: auto; /* 높이는 자동으로 비율 유지 */
+  display: block; /* 여백 없애려고 */
+  max-width: 100%; /* 혹시 부모 요소보다 커지는 것 방지 */
+}
 #slide-modal .close-btn-slide {
   position: absolute;
   top: 1rem;

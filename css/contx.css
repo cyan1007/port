@@ -10,7 +10,7 @@
 
 #problem-solving h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
   margin-bottom: 50px;
   line-height: 1.4;
   color: var(--color-text-white);

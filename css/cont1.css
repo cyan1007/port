@@ -156,9 +156,9 @@ body.light .image-column::before {
 
 .neon-text {
   font-family: "Orbitron", sans-serif;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 6vw, 3rem);
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-text-white);
   text-align: left;
   white-space: nowrap;
   position: relative;
@@ -212,7 +212,6 @@ body.light .image-column::before {
   }
 
   .neon-text {
-    font-size: 2rem;
     line-height: 1.2;
   }
 
@@ -278,6 +277,9 @@ body.light .image-column::before {
    반응형: 모바일 아이콘
    ======================== */
 @media (max-width: 768px) {
+  .image-column {
+    display: none;
+  }
   .icon-grid.desktop-only {
     display: none !important;
   }
@@ -414,7 +416,6 @@ body.light .image-column::before {
   transform: translateY(-50%);
   width: 80%;
   max-height: 60vh; /* 화면 높이 40% */
-  overflow: hidden; /* 넘치는 부분 숨기기 */
   flex-direction: column;
   gap: 0.8rem;
   background: transparent;
