@@ -217,7 +217,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateMobileSlides() {
-    mobileSlider.style.transform = `translateX(-${mobileIndex * 100}%)`;
+    console.log(
+      "mobileIndex:",
+      mobileIndex,
+      "mobileSlides.length:",
+      mobileSlides.length
+    );
+
+    if (mobileSlides.length > 0) {
+      const sliderWidth = 100 * mobileSlides.length; // % 단위
+      mobileSlider.style.width = `${sliderWidth}vw`; // 5개면 500vw
+
+      // 이동
+      mobileSlider.style.transform = `translateX(-${mobileIndex * 100}vw)`;
+    }
   }
 
   function shiftSlide(dir) {

@@ -191,6 +191,13 @@
    미디어쿼리
 -------------------------------- */
 @media (max-width: 700px) {
+  .mobile-slide img {
+    width: 60vw;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
   .cont3.mobile-active .mobile-slider-container {
     display: block !important;
   }
@@ -202,36 +209,34 @@
   .mobile-slider-container {
     display: block;
     width: 100vw;
-    overflow: hidden; /* 스크롤바 숨기기 */
+    overflow-x: hidden; /* 스크롤 허용 */
     height: auto; /* 높이 자동 */
     position: relative;
     margin-top: 2rem;
-    padding: 1rem 0;
+    padding: 0; /* 좌우 여백 제거 */
     -webkit-overflow-scrolling: touch; /* iOS 스크롤 부드럽게 */
   }
 
   /* 모바일 슬라이드 전체 행 */
   .mobile-slider {
     display: flex;
-    flex-direction: row;
-    width: max-content; /* 내부 슬라이드 개수에 따라 넓어짐 */
-    gap: 1rem;
+    gap: 0;
+    margin: 0;
+    width: max-content;
     transition: transform 0.5s ease-in-out;
   }
 
   /* 각 모바일 슬라이드: 전체 화면 너비 고정 */
   .mobile-slide {
-    flex: 0 0 100vw; /* 컨테이너 너비와 같게 고정 */
+    flex: 0 0 calc(100vw - 2rem);
+    width: calc(100vw - 2rem);
     box-sizing: border-box;
-    scroll-snap-align: center;
-    background: var(--color-box-bg);
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
   }
 
   /* 버튼 크기 및 위치 조정 */
@@ -272,6 +277,22 @@
   .mobile-buttons .btn-view:hover,
   .mobile-buttons .btn-work:hover {
     background-color: var(--color-accent-hover);
+  }
+
+  /* 모바일 슬라이드 텍스트 줄바꿈 및 넘침 방지 추가 */
+  .mobile-slide .portfolio-info h3,
+  .mobile-slide .portfolio-info p {
+    white-space: normal; /* 줄 바꿈 허용 */
+    overflow-wrap: break-word; /* 단어가 길면 줄 바꿈 */
+    word-break: break-word;
+    max-height: 4.5em; /* 높이 제한 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-slide .portfolio-info {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
