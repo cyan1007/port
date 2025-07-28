@@ -60,12 +60,13 @@ nav ul li a {
   justify-content: center;
   gap: 5px;
   cursor: pointer;
+  z-index: 2000;
 }
 
 .menu-toggle span {
   width: 25px;
   height: 3px;
-  background: var(--text);
+  background: var(--text-light);
   transition: 0.3s;
 }
 
