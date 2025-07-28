@@ -14,12 +14,12 @@
   --text-subtle: #dddddd;
   --text-muted: #cccccc;
   --accent: #00f6ff;
-  --button: #00e498;
+  --button: #2400ee;
   --tag-bg: #1a1a1a;
   --color-bg: #0a0a0a;
   --color-accent: #00f6ff;
   --color-accent-hover: #00d0ff;
-
+  --dark-over: rgba(0, 0, 0, 0.5); /* 어두운 정도 조절 가능 */
   --hero-bg-light1: #f0f0f0;
   --hero-bg-light2: #e0e0e0;
   --color-text-white: #ffffff;
@@ -47,7 +47,7 @@
   --color-box-bg: #111111;
   --color-border: #00f6ff44;
   --color-shadow: rgba(0, 246, 255, 0.2);
-  --color-hover: #005fa3;
+  --color-hover: #029aff;
   --color-highlight-gradient-start: #00f6ff;
   --color-highlight-gradient-end: #00d0ff;
 
@@ -61,11 +61,12 @@ body.light-mode {
   --text-subtle: #444444;
   --text-muted: #666666;
   --accent: #007acc;
+  --button: #c4dbfd;
   --tag-bg: #e6f0f7;
   --color-bg: #ffffff;
   --color-accent: #0077cc;
   --color-accent-hover: #005fa3;
-
+  --dark-over: rgba(255, 255, 255, 0.7); /* 어두운 정도 조절 가능 */
   --color-text-white: #000000;
   --color-text-light-gray: #a0a0a0;
   --color-text-gray: #555555;
