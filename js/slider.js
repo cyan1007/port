@@ -2,6 +2,7 @@ let currentIndex = 0;
 let mobileIndex = 0;
 let slides = [];
 let mobileSlides = [];
+
 function updateMode() {
   const container = document.querySelector(".cont4");
   if (!container) return;
@@ -9,6 +10,7 @@ function updateMode() {
   container.classList.remove("desktop-active", "mobile-active");
   container.classList.add(isMobile ? "mobile-active" : "desktop-active");
 }
+
 function updateDesktopSlides() {
   const total = slides.length;
   const prevIndex = (currentIndex - 1 + total) % total;
@@ -21,6 +23,32 @@ function updateDesktopSlides() {
     else if (i === nextIndex) slide.classList.add("next");
     else slide.classList.add("inactive");
   });
+}
+
+function updateMobileSlides() {
+  if (mobileSlides.length > 0) {
+    const sliderWidth = 100 * mobileSlides.length; // % 단위
+    const mobileSlider = document.getElementById("mobileSlider");
+    mobileSlider.style.width = `${sliderWidth}vw`; // 예: 5개면 500vw
+    mobileSlider.style.transform = `translateX(-${mobileIndex * 100}vw)`;
+  }
+}
+
+function shiftSlide(dir) {
+  const isMobile = window.innerWidth <= 700;
+  if (isMobile) {
+    mobileIndex =
+      dir === "next"
+        ? (mobileIndex + 1) % mobileSlides.length
+        : (mobileIndex - 1 + mobileSlides.length) % mobileSlides.length;
+    updateMobileSlides();
+  } else {
+    currentIndex =
+      dir === "next"
+        ? (currentIndex + 1) % slides.length
+        : (currentIndex - 1 + slides.length) % slides.length;
+    updateDesktopSlides();
+  }
 }
 
 const slideSets = {
@@ -195,124 +223,172 @@ const slideSets = {
   ],
 };
 
+function renderSlides(setKey) {
+  const slider = document.getElementById("slider");
+  const mobileSlider = document.getElementById("mobileSlider");
+  const container = document.querySelector(".cont4");
+  if (!slider || !mobileSlider || !container) return;
+
+  const slideData = slideSets[setKey];
+  slider.innerHTML = "";
+  mobileSlider.innerHTML = "";
+  slides = [];
+  mobileSlides = [];
+
+  updateMode();
+
+  // 데스크탑 슬라이드 생성
+  slideData.forEach((item) => {
+    const div = document.createElement("div");
+    div.classList.add("slide");
+
+    div.innerHTML = `
+      <div class="slide-overlay">
+        <button class="view-more">자세히 보기</button>
+      </div>
+      <div class="portfolio-info">
+        <img src="${item.img}" alt="${item.title}" />
+        <h3>${item.title}</h3>
+        <p>${item.desc}</p>
+      </div>
+    `;
+
+    div.querySelector(".view-more").addEventListener("click", () => {
+      if (item.type === "modal") {
+        openSlideModal(item.content || "내용 없음");
+      } else if (item.type === "link") {
+        window.location.href = item.url;
+      }
+    });
+
+    slider.appendChild(div);
+    slides.push(div);
+  });
+
+  // 모바일 슬라이드 생성
+  slideData.forEach((item) => {
+    const div = document.createElement("div");
+    div.classList.add("mobile-slide");
+
+    div.innerHTML = `
+      <div class="slide-overlay">
+        <button class="view-more">자세히 보기</button>
+      </div>
+      <div class="portfolio-info">
+        <img src="${item.img}" alt="${item.title}" />
+        <h3>${item.title}</h3>
+        <p>${item.desc}</p>
+      </div>
+    `;
+
+    div.querySelector(".portfolio-info img").addEventListener("click", () => {
+      if (item.type === "modal") {
+        openSlideModal(item.content || "내용 없음");
+      } else if (item.type === "link") {
+        window.location.href = item.url;
+      }
+    });
+
+    div.querySelector(".view-more").addEventListener("click", () => {
+      if (item.type === "modal") {
+        openSlideModal(item.content || "내용 없음");
+      } else if (item.type === "link") {
+        window.location.href = item.url;
+      }
+    });
+
+    mobileSlider.appendChild(div);
+    mobileSlides.push(div);
+  });
+
+  currentIndex = 0;
+  mobileIndex = 0;
+  updateDesktopSlides();
+  updateMobileSlides();
+}
+
+function openSlideModal(content) {
+  const modal = document.getElementById("modal-cont4-slide");
+  if (!modal) return;
+  const body = modal.querySelector(".modal-cont4-body");
+  body.innerHTML = content;
+  modal.style.display = "block";
+
+  // 배경 스크롤 막기
+  document.body.style.overflow = "hidden";
+}
+
+function initSlideModalEvents() {
+  const modal = document.getElementById("modal-cont4-slide");
+  if (!modal) return;
+
+  modal.querySelector(".modal-cont4-close").addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.style.display === "block") {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+}
+
+window.addEventListener("resize", () => {
+  updateMode();
+
+  currentIndex = 0;
+  mobileIndex = 0;
+
+  updateDesktopSlides();
+  updateMobileSlides();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("slider");
   const mobileSlider = document.getElementById("mobileSlider");
   const prevBtn = document.querySelector(".prev-btn");
   const nextBtn = document.querySelector(".next-btn");
+  const tabButtons = document.querySelectorAll(".tab-btn");
   const container = document.querySelector(".cont4");
 
-  function renderSlides(setKey) {
-    const slideData = slideSets[setKey];
-    slider.innerHTML = "";
-    mobileSlider.innerHTML = "";
-    slides = [];
-    mobileSlides = [];
+  if (!slider || !mobileSlider || !prevBtn || !nextBtn || !container) return;
 
-    updateMode();
-    // 데스크탑 슬라이드 생성
-    slideData.forEach((item) => {
-      const div = document.createElement("div");
-      div.classList.add("slide");
+  // URL 파라미터와 해시에서 초기 탭 결정
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabParam = urlParams.get("tab");
+  const hash = window.location.hash.substring(1);
+  const initialTab =
+    tabParam && slideSets[tabParam]
+      ? tabParam
+      : hash && slideSets[hash]
+      ? hash
+      : "set1";
 
-      div.innerHTML = `
-        <div class="slide-overlay">
-          <button class="view-more">자세히 보기</button>
-        </div>
-        <div class="portfolio-info">
-          <img src="${item.img}" alt="${item.title}" />
-          <h3>${item.title}</h3>
-          <p>${item.desc}</p>
-        </div>
-      `;
+  // 탭 버튼 초기 활성화
+  tabButtons.forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.tab === initialTab);
+  });
 
-      // 슬라이드 전용 "자세히 보기" 이벤트: 기존 모달(initModal)과는 별도
-      div.querySelector(".view-more").addEventListener("click", () => {
-        if (item.type === "modal") {
-          openSlideModal(item.content || "내용 없음");
-        } else if (item.type === "link") {
-          window.open(item.url, "_blank");
-        }
-      });
+  renderSlides(initialTab);
 
-      slider.appendChild(div);
-      slides.push(div);
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderSlides(btn.dataset.tab);
+
+      history.replaceState(null, "", `#${btn.dataset.tab}`);
     });
-
-    // 모바일 슬라이드 생성
-    slideData.forEach((item) => {
-      const div = document.createElement("div");
-      div.classList.add("mobile-slide");
-
-      div.innerHTML = `
-        <div class="slide-overlay">
-          <button class="view-more">자세히 보기</button>
-        </div>
-        <div class="portfolio-info">
-          <img src="${item.img}" alt="${item.title}" />
-          <h3>${item.title}</h3>
-          <p>${item.desc}</p>
-        </div>
-      `;
-      div.querySelector(".portfolio-info img").addEventListener("click", () => {
-        if (item.type === "modal") {
-          openSlideModal(item.content || "내용 없음");
-        } else if (item.type === "link") {
-          window.location.href = item.url;
-        }
-      });
-      // 모바일 슬라이드 "자세히 보기" 이벤트
-      div.querySelector(".view-more").addEventListener("click", () => {
-        if (item.type === "modal") {
-          openSlideModal(item.content || "내용 없음");
-        } else if (item.type === "link") {
-          window.location.href = item.url; // 현재 탭에서 열기
-        }
-      });
-
-      mobileSlider.appendChild(div);
-      mobileSlides.push(div);
-    });
-
-    currentIndex = 0;
-    mobileIndex = 0;
-    updateDesktopSlides();
-    updateMobileSlides();
-  }
-
-  function updateMobileSlides() {
-    console.log(
-      "mobileIndex:",
-      mobileIndex,
-      "mobileSlides.length:",
-      mobileSlides.length
-    );
-
-    if (mobileSlides.length > 0) {
-      const sliderWidth = 100 * mobileSlides.length; // % 단위
-      mobileSlider.style.width = `${sliderWidth}vw`; // 5개면 500vw
-
-      // 이동
-      mobileSlider.style.transform = `translateX(-${mobileIndex * 100}vw)`;
-    }
-  }
-
-  function shiftSlide(dir) {
-    const isMobile = window.innerWidth <= 700;
-    if (isMobile) {
-      mobileIndex =
-        dir === "next"
-          ? (mobileIndex + 1) % mobileSlides.length
-          : (mobileIndex - 1 + mobileSlides.length) % mobileSlides.length;
-      updateMobileSlides();
-    } else {
-      currentIndex =
-        dir === "next"
-          ? (currentIndex + 1) % slides.length
-          : (currentIndex - 1 + slides.length) % slides.length;
-      updateDesktopSlides();
-    }
-  }
+  });
 
   prevBtn.addEventListener("click", () => shiftSlide("prev"));
   nextBtn.addEventListener("click", () => shiftSlide("next"));
@@ -322,16 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowRight") shiftSlide("next");
   });
 
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      tabButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      renderSlides(btn.dataset.tab);
-    });
-  });
-
-  // 터치 스와이프 기능 (모바일)
+  // 모바일 터치 이벤트
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -342,52 +409,10 @@ document.addEventListener("DOMContentLoaded", () => {
   mobileSlider.addEventListener("touchend", (e) => {
     touchEndX = e.changedTouches[0].clientX;
     const diff = touchEndX - touchStartX;
-    const threshold = 50;
-    if (Math.abs(diff) > threshold) {
+    if (Math.abs(diff) > 50) {
       diff > 0 ? shiftSlide("prev") : shiftSlide("next");
     }
   });
 
-  renderSlides("set1");
-  // 슬라이드용 모달 이벤트 초기화 (기존 initModal과 별도)
   initSlideModalEvents();
-});
-
-// 슬라이드 전용 모달 함수 (기존 모달 시스템과 충돌없이 별도 관리)
-function openSlideModal(content) {
-  const modal = document.getElementById("modal-cont4-slide");
-  const body = modal.querySelector(".modal-cont4-body");
-  body.innerHTML = content;
-  modal.style.display = "block";
-}
-
-function initSlideModalEvents() {
-  const modal = document.getElementById("modal-cont4-slide");
-
-  // 닫기 버튼
-  modal.querySelector(".modal-cont4-close").addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // 바깥 영역 클릭 시 닫기
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-
-  // ESC 키 누르면 닫기
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") modal.style.display = "none";
-  });
-}
-
-window.addEventListener("resize", () => {
-  updateMode();
-
-  // 인덱스 초기화
-  currentIndex = 0;
-  mobileIndex = 0;
-
-  // 슬라이드 상태 갱신
-  updateDesktopSlides();
-  updateMobileSlides();
 });
