@@ -1,9 +1,9 @@
 .fullscreen-section {
   width: 100vw;
-  min-height: 100vh;
+  min-height: auto;
   background: var(--bg-dark);
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* 👈 중앙 정렬 말고, 위에서 시작하게 */
   padding: 4rem 2rem;
   color: var(--text-light);
 }
@@ -20,7 +20,10 @@
 .intro-left {
   flex: 1 1 300px;
   display: flex;
+  flex-direction: column; /* 세로 정렬 */
   justify-content: center;
+  align-items: center; /* 가로 중앙 정렬 */
+  gap: 1rem; /* 사진과 태그 사이 간격 */
 }
 
 .profile-img {
@@ -77,6 +80,10 @@
   border-radius: 8px;
   font-size: 0.85rem;
   color: var(--accent);
+}
+
+.intro-career {
+  display: block;
 }
 
 .intro-career h3 {
