@@ -355,17 +355,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 슬라이드 전용 모달 함수 (기존 모달 시스템과 충돌없이 별도 관리)
 function openSlideModal(content) {
-  const modal = document.getElementById("slide-modal");
-  const body = modal.querySelector(".modal-body");
+  const modal = document.getElementById("modal-cont4-slide");
+  const body = modal.querySelector(".modal-cont4-body");
   body.innerHTML = content;
   modal.style.display = "block";
 }
 
 function initSlideModalEvents() {
-  const modal = document.getElementById("slide-modal");
+  const modal = document.getElementById("modal-cont4-slide");
 
   // 닫기 버튼
-  modal.querySelector(".close-btn-slide").addEventListener("click", () => {
+  modal.querySelector(".modal-cont4-close").addEventListener("click", () => {
     modal.style.display = "none";
   });
 

@@ -78,75 +78,84 @@
   line-height: 1.6;
 }
 
-.modal {
+.modal-cont3 {
   display: none;
   position: fixed;
   z-index: 9999;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* 화면 중앙에 정확히 위치 */
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
-  justify-content: center; /* 수평 가운데 */
-  align-items: center; /* 수직 가운데 */
-  padding: 1rem; /* 여백 */
+  padding: 1rem;
   box-sizing: border-box;
+  /* flex 정렬 제거 (중앙 위치를 transform으로 처리하므로) */
+  /* justify-content, align-items 삭제 */
 }
 
-.modal-content {
-  background-color: var(--bg-dark);
-  margin: 5% auto;
+.modal-cont3-content {
+  background-color: var(--bg-dark, #0a0a0a);
   padding: 1.5rem;
   border-radius: 8px;
-  width: 90%;
-  max-width: 1100px;
-  position: relative;
-  color: var(--text-light);
-  /* 높이는 컨텐츠에 맞게 자동 조절 */
-  max-height: 90vh;
-  overflow-y: auto; /* 세로 스크롤 필요시 */
+  width: 90vw; /* 부모 안에서 최대 가로폭 채우기 */
+  max-width: 1100px; /* 최대 넓이 제한 */
+  height: 90vh;
+  max-height: 90vh; /* 최대 높이 제한 */
+  overflow-y: auto; /* 세로 스크롤 허용 */
   box-sizing: border-box;
+  position: relative;
+  color: var(--text-light, #fff);
+
+  display: flex;
+  flex-direction: column;
+
+  /* 가운데 정렬을 위해 margin 추가 */
+  margin: 0 auto;
+
+  /* 내부 내용이 왼쪽으로 쏠리지 않도록 기본 텍스트 정렬 */
+  text-align: center;
 }
-.modal-content img,
-.modal iframe {
+
+.modal-cont3-content.image-only {
+  padding: 0;
+  text-align: center;
+}
+
+.modal-cont3-content.image-only img {
+  width: 100%;
+  height: auto;
   max-width: 100%;
   object-fit: contain;
   display: block;
   margin: 0 auto;
 }
-.modal .close {
-  position: absolute;
-  top: 12px;
-  right: 20px;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--text-light);
+
+.modal-cont3 iframe {
+  width: 100%;
+  max-height: 85vh;
+  height: auto;
+  border: 1px solid #444;
+  border-radius: 8px;
+  flex-grow: 1;
 }
 
-/* 닫기 버튼 스타일 */
-.modal .close {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  color: var(--accent, #00f6ff); /* 강조색 또는 기본 하늘색 */
+/* 닫기 버튼 위치는 그대로 유지 */
+.modal-cont3-close {
+  position: fixed;
+  top: 20px;
+  right: 200px;
+  color: var(--accent, #00f6ff);
   font-size: 32px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 10;
+  z-index: 10000;
   transition: 0.3s;
 }
 
-.modal .close:hover {
-  color: #ff5252; /* hover 시 붉은색 포인트 */
+.modal-cont3-close:hover {
+  color: #ff5252;
 }
-
-.modal iframe {
-  width: 100%;
-  height: 600px;
-  border: 1px solid #444;
-  border-radius: 8px;
-}
-
 .case-desc button {
   margin-right: 0.5rem;
   padding: 0.5rem 1.2rem;
@@ -208,6 +217,20 @@
   .case-images .after {
     flex: 1 1 100%; /* ✅ 모바일에서는 세로로 */
     max-width: 100%;
+  }
+
+  .modal-cont3-content {
+    max-height: 85vh;
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .modal-cont3-content.image-only img {
+    max-height: 80vh;
+  }
+
+  .modal-cont3 iframe {
+    max-height: 70vh;
   }
 }
 
