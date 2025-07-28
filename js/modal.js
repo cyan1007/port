@@ -4,7 +4,8 @@ export function initModal() {
       const modalId = btn.getAttribute("data-modal");
       const modal = document.getElementById(modalId);
       if (modal && modal.classList.contains("modal-cont3")) {
-        modal.style.display = "block";
+        modal.style.display = "flex"; // flex → 중앙 정렬
+        openModal(modal);
       }
     });
   });
@@ -14,20 +15,21 @@ export function initModal() {
       const modalId = img.dataset.modal;
       const modal = document.getElementById(modalId);
       if (modal && modal.classList.contains("modal-cont3")) {
-        modal.style.display = "block";
+        modal.style.display = "flex";
       }
     });
   });
 
   document.querySelectorAll(".modal-cont3-close").forEach((btn) => {
     btn.addEventListener("click", () => {
-      btn.closest(".modal-cont3").style.display = "none";
+      const modal = btn.closest(".modal-cont3");
+      closeModal(modal);
     });
   });
 
   window.addEventListener("click", (e) => {
     document.querySelectorAll(".modal-cont3").forEach((modal) => {
-      if (e.target === modal) modal.style.display = "none";
+      if (e.target === modal) closeModal(modal);
     });
   });
 }
@@ -35,33 +37,13 @@ export function initModal() {
 // 자동 실행
 initModal();
 
-export function initSlideModal() {
-  document.querySelectorAll(".open-modal-slide").forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      const modalId = trigger.dataset.modal || "modal-cont4-slide";
-      const modal = document.getElementById(modalId);
-      if (modal && modal.classList.contains("modal-cont4")) {
-        const modalBody = modal.querySelector(".modal-cont4-body");
-        const content = trigger.dataset.modalContent || "";
-        if (modalBody) modalBody.innerHTML = content;
-        modal.style.display = "block";
-      }
-    });
-  });
-
-  document.querySelectorAll(".modal-cont4-close").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const modal = btn.closest(".modal-cont4");
-      if (modal) modal.style.display = "none";
-    });
-  });
-
-  window.addEventListener("click", (e) => {
-    document.querySelectorAll(".modal-cont4").forEach((modal) => {
-      if (e.target === modal) modal.style.display = "none";
-    });
-  });
+function openModal(modal) {
+  modal.style.display = "flex";
+  document.body.classList.add("modal-open");
+  centerModal(modal); // 중앙 정렬 유지
 }
 
-// 자동 실행
-initSlideModal();
+function closeModal(modal) {
+  modal.style.display = "none";
+  document.body.classList.remove("modal-open");
+}
