@@ -1,263 +1,430 @@
+/* 기본 컨테이너 스타일 */
 .cont4 {
-  padding: 80px 20px;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  text-align: center; /* 제목 가운데 정렬 */
-}
-
-.cont4 h2 {
-  font-size: clamp(1.5rem, 6vw, 2.5rem);
-  margin-bottom: 40px;
-}
-.cases-wrapper {
-  max-width: 1200px; /* 최대 너비 제한 */
-  margin: 0 auto; /* 화면 가운데 정렬 */
-  display: flex;
-  gap: 4rem;
-  justify-content: center; /* 가운데 정렬 */
-}
-.clone-cases,
-.redesign-cases {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  flex: 1 1 0;
-}
-.case-block {
-  background: var(--bg-dark); /* 필요하면 배경 넣기 */
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: left; /* 내부 왼쪽 정렬 유지 */
-  box-shadow: 0 0 10px var(--color-shadow-cyan-55);
-}
-.redesign-cases {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
-.case {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.case-images {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.case-images .before,
-.case-images .after {
-  flex: 0 1 calc(50% - 10px); /* ✅ 정확히 반, gap 고려 */
-  max-width: calc(50% - 10px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.case-images img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  max-height: none; /* ✅ 기존 max-height 무효화 (중복 방지) */
-}
-
-.case-desc h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.case-desc p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
-  justify-content: center; /* 수평 가운데 */
-  align-items: center; /* 수직 가운데 */
-  padding: 1rem; /* 여백 */
-  box-sizing: border-box;
+  background-color: var(--color-bg); /* #0a0a0a 대신 변수 */
+  color: var(--color-text-main); /* #0a0a0a 대신 변수 (텍스트용) */
 }
 
-.modal-content {
-  background-color: var(--bg-dark);
-  margin: 5% auto;
-  padding: 1.5rem;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 1100px;
+/* ------------------------------
+   데스크탑 슬라이더 (>700px)
+-------------------------------- */
+.cont4 .slider-container {
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
   position: relative;
-  color: var(--text-light);
-  /* 높이는 컨텐츠에 맞게 자동 조절 */
-  max-height: 90vh;
-  overflow-y: auto; /* 세로 스크롤 필요시 */
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.modal-content img,
-.modal iframe {
-  max-width: 100%;
+
+.cont4.desktop-active .slider {
+  width: 100vw;
+  height: 80%;
+  position: relative;
+}
+
+.cont4.desktop-active .slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40vw;
+  height: 100%;
+  border-radius: 2rem;
+  background-color: var(--color-slide-bg); /* 기존 box-bg에서 분리 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: all 0.8s ease;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.8);
+  z-index: 0;
+}
+
+.cont4.desktop-active .slide.prev {
+  transform: translateX(-120%) scale(0.8);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.cont4.desktop-active .slide.active {
+  transform: translateX(-50%) scale(1.2);
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.cont4.desktop-active .slide.next {
+  transform: translateX(20%) scale(0.8);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.cont4.desktop-active .slide.inactive {
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ------------------------------
+   공통 슬라이드 내부 스타일
+-------------------------------- */
+.portfolio-info {
+  opacity: 0.5;
+  transform: translateY(40px);
+  transition: all 0.5s ease;
+  position: relative;
+  box-shadow: none; /* 혹시 기본 그림자가 있다면 제거 */
+  overflow: hidden;
+}
+
+.slide.active .portfolio-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-info img {
+  width: 90%;
+  height: auto;
+  max-height: 40vh;
+  border-radius: 1rem;
   object-fit: contain;
   display: block;
   margin: 0 auto;
 }
-.modal .close {
+.portfolio-info h3,
+.portfolio-info p {
+  padding-top: 1rem;
+  padding-left: 1.8rem;
+  text-align: left;
+  color: var(--color-accent); /* 텍스트 색상 변수 적용 */
+}
+
+.portfolio-info h3 {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+}
+
+.portfolio-info p {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  color: var(--color-text-muted); /* 본문 텍스트 색상 변수 적용 */
+}
+
+/* ------------------------------
+   버튼 스타일
+-------------------------------- */
+.slide-btn {
   position: absolute;
-  top: 12px;
-  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 2rem;
   cursor: pointer;
-  color: var(--text-light);
-}
-
-/* 닫기 버튼 스타일 */
-.modal .close {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  color: var(--accent, #00f6ff); /* 강조색 또는 기본 하늘색 */
-  font-size: 32px;
-  font-weight: bold;
-  cursor: pointer;
   z-index: 10;
-  transition: 0.3s;
+  border: 1px solid var(--color-accent); /* #00f6ff 대신 변수 */
+  background: rgba(0, 255, 255, 0.4);
+  color: var(--color-accent); /* #00f6ff 대신 변수 */
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  transition: background 0.3s, border 0.3s;
 }
 
-.modal .close:hover {
-  color: #ff5252; /* hover 시 붉은색 포인트 */
+.slide-btn:hover {
+  background: rgba(0, 255, 255, 0.3);
+  border-color: var(--color-accent-hover);
+}
+.cont4.desktop-active .slide {
+  box-shadow: 0 0 20px var(--color-shadow); /* 기본값 */
 }
 
-.modal iframe {
-  width: 100%;
-  height: 600px;
-  border: 1px solid #444;
-  border-radius: 8px;
+.portfolio-info {
+  box-shadow: none !important;
 }
 
-.case-desc button {
-  margin-right: 0.5rem;
-  padding: 0.5rem 1.2rem;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 6px;
-  background-color: #00f6ff;
-  color: #000;
+.cont4.desktop-active .slide.prev,
+.cont4.desktop-active .slide.next {
+  box-shadow: none; /* 비활성화된 슬라이드에는 그림자 제거 */
+}
+
+.prev-btn {
+  left: 5rem;
+}
+
+.next-btn {
+  right: 5rem;
+}
+
+/* ------------------------------
+   탭 메뉴
+-------------------------------- */
+.tab-menu {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 5;
+  display: flex;
+  gap: 1rem;
+}
+
+.tab-btn {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.case-desc button:hover {
-  background-color: #00d0ff;
+.tab-btn.active,
+.tab-btn:hover {
+  background: var(--color-accent);
+  color: black;
+}
+.cont4.desktop-active .mobile-slider-container {
+  display: none !important;
+}
+/* ------------------------------
+   미디어쿼리
+-------------------------------- */
+@media (max-width: 700px) {
+  .mobile-slide .portfolio-info {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  .mobile-slide img {
+    width: 60vw;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+  .cont4.mobile-active .mobile-slider-container {
+    display: block !important;
+  }
+  .cont4.mobile-active .slider-container {
+    display: none !important;
+  }
+
+  /* 모바일 슬라이더 컨테이너 보이기 */
+  .mobile-slider-container {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    width: 100vw;
+    height: 80vh; /* 높이를 고정하거나 최대 높이 지정 */
+    overflow-x: auto;
+    overflow-y: hidden; /* 세로 스크롤 방지 */
+    position: relative;
+    padding: 0; /* 좌우 여백 제거 */
+    -webkit-overflow-scrolling: touch; /* iOS 스크롤 부드럽게 */
+  }
+
+  /* 모바일 슬라이드 전체 행 */
+  .mobile-slider {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    width: auto;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* 각 모바일 슬라이드: 전체 화면 너비 고정 */
+  .mobile-slide {
+    flex: 0 0 100vw;
+    width: 100vw;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-height: 80vh; /* 최대 높이 제한 */
+    white-space: normal;
+    overflow: hidden; /* 넘치는 내용 숨기기 */
+  }
+
+  /* 버튼 크기 및 위치 조정 */
+  .prev-btn {
+    left: 1rem;
+  }
+
+  .next-btn {
+    right: 1rem;
+  }
+
+  .slide-btn {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* 모바일 슬라이드 내 버튼들 */
+  .mobile-buttons {
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .mobile-buttons .btn-view,
+  .mobile-buttons .btn-work {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    background: var(--color-accent);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .mobile-buttons .btn-view:hover,
+  .mobile-buttons .btn-work:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  /* 모바일 슬라이드 텍스트 줄바꿈 및 넘침 방지 추가 */
+  .mobile-slide .portfolio-info h3,
+  .mobile-slide .portfolio-info p {
+    white-space: normal; /* 줄 바꿈 허용 */
+    overflow-wrap: break-word; /* 단어가 길면 줄 바꿈 */
+    word-break: break-word;
+    max-height: 4.5em; /* 높이 제한 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-slide .portfolio-info {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
-/* .cont4 안에 새로 추가할 감싸는 div */
-.cases-wrapper {
+.slide-overlay {
+  position: absolute;
+  inset: 0; /* top: 0; left: 0; right: 0; bottom: 0 와 같음 */
+  background-color: rgba(0, 0, 0, 0.5); /* 어두운 반투명 배경 */
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap; /* 반응형에서 잘 쌓이도록 */
-}
-
-/* 왼쪽, 오른쪽 컬럼 각각 */
-.clone-cases,
-.redesign-cases {
-  flex: 1 1 48%; /* 가로폭 48%로 지정 (2열) */
-  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
+  border-radius: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.cont4.desktop-active .slide.active:hover .slide-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* 버튼 공통 스타일 */
+.btn-view,
+.btn-work,
+.view-more {
+  padding: 0.6rem 1.5rem;
+  background-color: transparent;
+  color: var(--color-text-white);
+  border: 1px solid var(--color-text-white);
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* hover 공통 */
+.btn-view:hover,
+.btn-work:hover,
+.view-more:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--text-dark);
+}
+
+.mobile-buttons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.mobile-buttons .btn-view,
+.mobile-buttons .btn-work {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  background: var(--color-accent);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: bold;
+}
+
+/* 슬라이드 전용 모달 스타일 */
+/* (기존 모달과 클래스명이 겹치더라도 슬라이드 모달은 #slide-modal 고유 ID를 사용) */
+#slide-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-modal-bg);
+}
+
+#slide-modal .modal-content {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  margin: 10% auto;
+  padding: 2rem;
+  background: var(--color-box-bg);
+  border-radius: 1rem;
+}
+
+#slide-modal .modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+  color: var(--color-box-bg);
+}
+
+#slide-modal .modal-body img {
+  width: 100%; /* 모달 내용 영역 가로폭에 맞춤 */
+  height: auto; /* 높이는 자동으로 비율 유지 */
+  display: block; /* 여백 없애려고 */
+  max-width: 100%; /* 혹시 부모 요소보다 커지는 것 방지 */
+}
+#slide-modal .close-btn-slide {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  .cases-wrapper {
-    flex-direction: column;
-  }
-  .clone-cases,
-  .redesign-cases {
-    flex-basis: 100%;
-  }
-}
-@media (max-width: 900px) {
-  .cases-wrapper {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .cont4-inner {
-    min-width: 300px;
-    max-width: 768px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .case-images .before,
-  .case-images .after {
-    flex: 1 1 100%; /* ✅ 모바일에서는 세로로 */
-    max-width: 100%;
+  .modal-content iframe {
+    height: 400px;
   }
 }
 
-.case-image {
-  margin-bottom: 1rem;
-  text-align: center;
+.close-btn-slide {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text-main);
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 10001; /* 혹시 가려질 경우 */
 }
 
-.case-image img {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.case-image img:hover {
-  transform: scale(1.02);
-}
-
-.case-block {
-  overflow: hidden; /* 넘치는 이미지나 내용 숨김 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 0;
-}
-
-.case-image img,
-.case-images img {
-  object-fit: cover; /* 이미지가 잘려도 비율 유지하며 꽉 차게 */
-  width: 100%;
-  height: 30vh;
-}
-.clone-cases .case-block,
-.redesign-cases .case-block {
-  min-height: 520px; /* 필요시 조정 */
-}
-
-.case-images .before,
-.case-images .after {
-  width: 100%;
-  max-width: 500px;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-.case-images .label {
-  font-size: 1rem;
-  line-height: 1.2;
-  margin-bottom: 0.3rem; /* 적당한 간격 */
+.close-btn-slide:hover {
+  color: var(--text-dark);
 }

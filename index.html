@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/cont4.css" />
     <link rel="stylesheet" href="css/cont5.css" />
     <link rel="stylesheet" href="css/light.css" />
+    <link rel="icon" href="assets/favicon/favi.ico" type="image/x-icon" />
 
     <script
       src="https://kit.fontawesome.com/fb5c53e3da.js"
@@ -43,10 +44,12 @@
         <div class="logo"><img id="logo" src="images/logo-gray.svg" /></div>
         <nav>
           <ul>
-            <li><a href="#">자기소개</a></li>
-            <li><a href="#">디자인 프로세스</a></li>
-            <li><a href="#">보유 능력</a></li>
-            <li><a href="#">팀 프로젝트</a></li>
+            <li><a href="#introHero">자기소개</a></li>
+            <li><a href="#cont1">디자인 프로세스</a></li>
+            <li><a href="#cont2">보유 능력</a></li>
+            <li><a href="#problem-solving">진행한 프로젝트들</a></li>
+            <li><a href="#portfolio">포트폴리오</a></li>
+            <li><a href="#cont5">연락하기</a></li>
           </ul>
         </nav>
         <div class="menu-toggle" id="menuToggle">
@@ -56,9 +59,12 @@
 
       <div class="mobile-nav" id="mobileNav">
         <button class="close-btn" id="closeBtn">&times;</button>
-        <a href="#cont2">자기소개</a>
-        <a href="#">보유 기술 / 툴</a>
-        <a href="#">포트폴리오</a>
+        <a href="#introHero">자기소개</a>
+        <a href="#cont1">디자인 프로세스</a>
+        <a href="#cont2">보유 능력</a>
+        <a href="#problem-solving">진행한 프로젝트들</a>
+        <a href="#portfolio">포트폴리오</a>
+        <a href="#cont5">연락하기</a>
       </div>
       <div class="overlay" id="overlay"></div>
 
@@ -74,7 +80,7 @@
             아이디어를 현실로,<br class="mobile-break" />
             경험을 가치로
           </p>
-          <a href="#portfolio" class="button">포트폴리오 보기</a>
+          <a href="#introHero" class="button">보러가기</a>
         </div>
       </section>
 
@@ -302,37 +308,8 @@
         </div>
       </section>
 
-      <!-- ✅ 슬라이더 포트폴리오 섹션 -->
-      <section
-        class="section cont3 scroll-animate desktop-active"
-        id="portfolio"
-      >
-        <!-- ✅ 탭 버튼 그룹 -->
-        <div class="tab-menu">
-          <button class="tab-btn active" data-tab="set1">디자인 기획</button>
-          <button class="tab-btn" data-tab="set2">웹 디자인</button>
-          <button class="tab-btn" data-tab="set3">그래픽</button>
-        </div>
-
-        <button class="slide-btn prev-btn">←</button>
-        <div class="slider-container">
-          <div class="slider" id="slider"></div>
-        </div>
-        <div class="mobile-slider-container">
-          <div class="mobile-slider" id="mobileSlider"></div>
-        </div>
-        <button class="slide-btn next-btn">→</button>
-        <!-- 슬라이드 전용 모달 (기존 모달 시스템과는 별도) -->
-        <div id="slide-modal" class="modal">
-          <div class="modal-content">
-            <span class="close-btn-slide">&times;</span>
-            <div class="modal-body"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section cont4 scroll-animate" id="cont4">
-        <div class="cont4-inner">
+      <section class="section cont3 scroll-animate" id="cont3">
+        <div class="cont3-inner">
           <h2 class="neon-text">PROJECT CASE STUDY</h2>
 
           <div class="cases-wrapper">
@@ -342,7 +319,7 @@
                 <div class="case">
                   <div class="case-image">
                     <img
-                      src="images/cont4/samsung.png"
+                      src="images/cont3/samsung.png"
                       alt="삼성화재 클론 작업물"
                     />
                   </div>
@@ -372,7 +349,7 @@
                 <div class="case">
                   <div class="case-image">
                     <img
-                      src="images/cont4/kjcareer.png"
+                      src="images/cont3/kjcareer.png"
                       alt="삼성화재 클론 작업물"
                     />
                   </div>
@@ -404,7 +381,7 @@
                     <div class="before">
                       <h4>Before</h4>
                       <img
-                        src="images/cont4/before.png"
+                        src="images/cont3/before.png"
                         alt="Before Design"
                         class="open-modal-img"
                         data-modal="modal-sreader-before"
@@ -413,7 +390,7 @@
                     <div class="after">
                       <h4>After</h4>
                       <img
-                        src="images/cont4/after.png"
+                        src="images/cont3/after.png"
                         alt="After Design"
                         class="open-modal-img"
                         data-modal="modal-sreader-after"
@@ -437,7 +414,7 @@
                     <div class="before">
                       <p>Before</p>
                       <img
-                        src="images/cont4/before2.png"
+                        src="images/cont3/before2.png"
                         alt="Before Design"
                         class="open-modal-img"
                         data-modal="modal-chungju-before"
@@ -446,7 +423,7 @@
                     <div class="after">
                       <p>After</p>
                       <img
-                        src="images/cont4/after2.jpg"
+                        src="images/cont3/after2.jpg"
                         alt="Before Design"
                         class="open-modal-img"
                         data-modal="modal-chungju-after"
@@ -500,7 +477,7 @@
         <div id="modal-sreader-before" class="modal">
           <div class="modal-content image-only">
             <span class="close">&times;</span>
-            <img src="images/cont4/before.png" alt="Before" />
+            <img src="images/cont3/before.png" alt="Before" />
           </div>
         </div>
 
@@ -508,7 +485,7 @@
         <div id="modal-sreader-after" class="modal">
           <div class="modal-content image-only">
             <span class="close">&times;</span>
-            <img src="images/cont4/after.png" alt="After" />
+            <img src="images/cont3/after.png" alt="After" />
           </div>
         </div>
 
@@ -516,7 +493,7 @@
         <div id="modal-chungju-before" class="modal">
           <div class="modal-content image-only">
             <span class="close">&times;</span>
-            <img src="images/cont4/before2.png" alt="Before" />
+            <img src="images/cont3/before2.png" alt="Before" />
           </div>
         </div>
 
@@ -524,7 +501,36 @@
         <div id="modal-chungju-after" class="modal">
           <div class="modal-content image-only">
             <span class="close">&times;</span>
-            <img src="images/cont4/after2.jpg" alt="After" />
+            <img src="images/cont3/after2.jpg" alt="After" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ✅ 슬라이더 포트폴리오 섹션 -->
+      <section
+        class="section cont4 scroll-animate desktop-active"
+        id="portfolio"
+      >
+        <!-- ✅ 탭 버튼 그룹 -->
+        <div class="tab-menu">
+          <button class="tab-btn active" data-tab="set1">디자인 기획</button>
+          <button class="tab-btn" data-tab="set2">웹 디자인</button>
+          <button class="tab-btn" data-tab="set3">그래픽</button>
+        </div>
+
+        <button class="slide-btn prev-btn">←</button>
+        <div class="slider-container">
+          <div class="slider" id="slider"></div>
+        </div>
+        <div class="mobile-slider-container">
+          <div class="mobile-slider" id="mobileSlider"></div>
+        </div>
+        <button class="slide-btn next-btn">→</button>
+        <!-- 슬라이드 전용 모달 (기존 모달 시스템과는 별도) -->
+        <div id="slide-modal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn-slide">&times;</span>
+            <div class="modal-body"></div>
           </div>
         </div>
       </section>
@@ -567,7 +573,7 @@
             </div>
 
             <div class="contact-sns">
-              <p>📧 이메일 및 SNS</p>
+              <p>이메일 및 SNS</p>
               <ul class="sns-list">
                 <li>
                   <a href="mailto:yourname@example.com" target="_blank">

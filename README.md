@@ -1,31 +1,53 @@
-# port
+# Yuri's portfolio
 
-```
-<div align= "center">
-    <img src="https://capsule-render.vercel.app/api?type=rounded&color=gradient&height=120&text=Portfoilo&animation=fadeIn&fontColor=000000&fontSize=70" />
-    </div>
-    <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 안녕하세요 이유리 입니다. </h2>
-    <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 이유리의 포트폴리오 페이지 입니다. 다양한 디자인 작업 및 UI/UX 및 퍼블리싱 작업들을 확인하실 수 있습니다. </div>
-    </div>
-    <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br>
-    <div style="margin: ; text-align: left;" "text-align: left;"> <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=white">
-          <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
-          <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
-          <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">
-          <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
-          <br/></div>
-    </div>
-    <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 Contact me </h2> <br>
-    <div style="text-align: left;"> <a href=mailto:kuramine0404@gmail.com> <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:kuramine0404@gmail.com"> </a>
-          </div>  <br>
-    <div style="text-align: left;">  </div>
-    </div>
-    <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🏅 Stats </h2> <div style="text-align: left;"> <img src="https://github-readme-stats.vercel.app/api?username=이유리&bg_color=180,000000,&title_color=000000&text_color=000000"
-         /> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=이유리&layout=compact&bg_color=180,000000,&title_color=000000&text_color=000000"
-           /> </div>
-    </div>
-```
+저의 포트폴리오 사이트입니다.
+
+## 🖥️ 프로젝트 소개
+
+지금까지 작업한 것을 전부 모은 포트폴리오 웹사이트 입니다.
+
+## 🕰️ 제작 기간
+
+- 25.07.1 - 25.07.28
+
+# ⚙️ 작업 툴
+
+- Vs code
+- Adobe PhotoShop, Illustrator, AFter Effects
+- Figma
+
+## 📌 주요 기능
+
+- 스크롤 애니메이션
+- Modal
+- 슬라이드 애니메이션
+- 마우스 커서 애니메이션
+
+## 주요 작품들
+
+- 디자인 기획
+
+  - 이음누리 도서관
+  - 밥플릭스 어플 기획
+  - 협업 웹 리디자인 기획(S리더 치과병원)
+  - 개인 웹 리디자인 기획(충주시 문화관광)
+
+- 웹 디자인
+
+  - 애니메이션 웹사이트
+  - 음악 플레이어 재생
+  - 비디오 플렉스
+  - 반응형 포트폴리오 웹사이트
+  - 삼성화재 클론코딩
+  - 국제 커리어 센터 클론코딩
+
+- 그래픽 디자인
+  - sns 카드뉴스
+  - sns 카드뉴스 2
+  - sns 배너
+  - 아이리버 헤드셋 상세페이지
+  - 한율 어린쑥 수분진정크림 상세페이지
+  - 제품 포스터
+  - 제품 포스터 2
+  - 제품 포스터 3
+  - 랜딩 페이지
