@@ -32,7 +32,7 @@ header.light nav ul li a {
   color: #353535;
 }
 .logo {
-  width: clamp(15vw, 20vw, 25vw);
+  width: 20vw;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -150,7 +150,7 @@ section {
 /* =============================
    ✅ 반응형
    ============================= */
-@media (min-width: 768px) {
+@media (min-width: 797px) {
   nav ul {
     display: flex;
   }
