@@ -191,6 +191,14 @@
    미디어쿼리
 -------------------------------- */
 @media (max-width: 700px) {
+  .portfolio-info {
+    margin: 0 auto;
+    padding-right: 1rem;
+    margin-right: 3rem;
+  }
+  .cont4.mobile-active .tab-menu {
+    margin-bottom: 3rem; /* 👈 탭 아래 여백 추가 */
+  }
   .mobile-slide .portfolio-info {
     opacity: 1 !important;
     transform: translateY(0) !important;
@@ -201,9 +209,20 @@
     height: auto;
     display: block;
     object-fit: contain;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
   .cont4.mobile-active .mobile-slider-container {
     display: block !important;
+    margin-top: 10rem; /* 👈 살짝 띄워서 버튼들과 정렬 */
+    height: calc(100vh - 200px); /* 👈 필요시 화면 높이 기준으로 조절 */
+    overflow-x: hidden;
+  }
+
+  .portfolio-info {
+    align-items: center;
+    justify-content: center;
   }
   .cont4.mobile-active .slider-container {
     display: none !important;
