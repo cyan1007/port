@@ -67,8 +67,19 @@ const slideSets = {
       desc: "밥플릭스 어플 기획 팀 프로젝트",
       img: "images/cont4/intro.png",
       type: "modal",
-      content: `<img src="/images/cont4/process.png">
-      <h3>밥플릭스</h3><p>팀프로젝트 어플 기획 내용입니다.</p>`,
+      content: `
+    <img src="/images/cont4/process.png">
+    <h3>밥플릭스</h3>
+    <p>팀프로젝트 어플 기획 내용입니다.</p>
+    <div style="margin-top: 1rem;">
+      <a href="https://www.figma.com/proto/OGH2s8j1Rt2pdNOfSVF1FO/4%EC%A1%B0-%EB%B0%A5%ED%94%8C%EB%A6%AD%EC%8A%A4-%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8?page-id=163%3A1441&node-id=458-1320&p=f&viewport=-314%2C-1642%2C0.92&t=zZtcOmzTiqmQ3h7C-1&scaling=min-zoom&content-scaling=fixed" 
+         target="_blank" 
+         class="modal-link-button" 
+         style="display:inline-block;padding:0.5rem 1rem;margin-top:1rem;background:#333;color:#fff;border-radius:5px;text-decoration:none;">
+        Figma에서 보러가기
+      </a>
+    </div>
+  `,
     },
     {
       title: "앱 디자인 2",
