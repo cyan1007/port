@@ -70,3 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
   initProcessHover();
   initModal();
 });
+
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+
+// EmailJS 초기화
+emailjs.init("V6IzEjoWDSmjCXdwm");
+
+// 폼 전송 이벤트 핸들링
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault(); // 기본 동작 방지
+
+    emailjs.sendForm("kuramine0404", "template_260ahv8", this).then(
+      function () {
+        alert("✅ 메일이 성공적으로 전송되었습니다!");
+        e.target.reset(); // 폼 초기화
+      },
+      function (error) {
+        alert("❌ 메일 전송 실패! 콘솔을 확인하세요.");
+        console.error("메일 전송 오류:", error);
+      }
+    );
+  });

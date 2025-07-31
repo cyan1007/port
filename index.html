@@ -498,11 +498,22 @@
 
           <div class="cont5-right">
             <div class="contact-form">
-              <p>협업이 필요하다면 아래에 메세지를 남겨주세요.</p>
-              <form>
-                <input type="text" placeholder="이름" required />
-                <input type="email" placeholder="이메일 주소" required />
+              <form id="contact-form">
+                <p>협업이 필요하다면 아래에 메세지를 남겨주세요.</p>
+                <input
+                  type="text"
+                  name="user_name"
+                  placeholder="이름"
+                  required
+                />
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder="이메일 주소"
+                  required
+                />
                 <textarea
+                  name="message"
                   placeholder="메시지를 입력해주세요"
                   required
                 ></textarea>
