@@ -29,13 +29,20 @@
     <link rel="stylesheet" href="css/light.css" />
     <link rel="icon" href="assets/favicon/favi.ico" type="image/x-icon" />
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script
       src="https://kit.fontawesome.com/fb5c53e3da.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("V6IzEjoWDSmjCXdwm");
+      })();
+    </script>
     <script src="js/slider.js" defer></script>
     <script src="js/mode.js" defer></script>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js" defer></script>
   </head>
 
   <body>
@@ -525,13 +532,19 @@
               <p>이메일 및 SNS</p>
               <ul class="sns-list">
                 <li>
-                  <a href="mailto:yourname@example.com" target="_blank">
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&to=kuramine0404@gmail.com"
+                    target="_blank"
+                  >
                     <i class="fa-solid fa-envelope"></i> kuramine0404@gmail.com
                   </a>
+                  <br />
+                  * 위의 입력폼으로 메일 보내기가 힘드시면 해당 이메일로 연락
+                  부탁드립니다.
                 </li>
                 <li>
-                  <a href="https://instagram.com/yourusername" target="_blank">
-                    <i class="fa-brands fa-instagram"></i> @zukaosi
+                  <a href="https://instagram.com/yrst1024" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> @yrst1024
                   </a>
                 </li>
               </ul>
