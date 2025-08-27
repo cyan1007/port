@@ -169,7 +169,7 @@ section {
 
 .notice {
   width: 100%;
-  height: 50px;
+  height: 10rem;
   padding: 1rem;
   background-color: var(--bg-dark);
 }
