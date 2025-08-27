@@ -41,10 +41,9 @@
       <nav>
         <ul>
           <li><a href="#introHero">자기소개</a></li>
-          <li><a href="#cont1">디자인 프로세스</a></li>
-          <li><a href="#cont2">보유 능력</a></li>
+          <li><a href="#cont1">포트폴리오</a></li>
+          <li><a href="#cont3">보유 능력</a></li>
           <li><a href="#problem-solving">팀 프로젝트</a></li>
-          <li><a href="#portfolio">포트폴리오</a></li>
           <li><a href="#cont5">연락하기</a></li>
         </ul>
       </nav>
@@ -56,10 +55,9 @@
     <div class="mobile-nav" id="mobileNav">
       <button class="close-btn" id="closeBtn">&times;</button>
       <a href="#introHero">자기소개</a>
-      <a href="#cont1">디자인 프로세스</a>
-      <a href="#cont2">보유 능력</a>
+      <a href="#cont1">포트폴리오</a>
+      <a href="#cont3">보유 능력</a>
       <a href="#problem-solving">팀 프로젝트</a>
-      <a href="#portfolio">포트폴리오</a>
       <a href="#cont5">연락하기</a>
     </div>
     <div class="overlay" id="overlay"></div>
@@ -128,9 +126,103 @@
 
   </div>
   </section>
+  <section class="section cont1 scroll-animate" id="cont1">
+    <div class="cont1-inner">
+      <h2 class="neon-text">PROJECT CASE STUDY</h2>
 
+      <div class="cases-wrapper">
+        <div class="case-block clone">
+          <h3>클론 코딩: 삼성화재</h3>
+          <div class="case">
+            <div class="case-image">
+              <img src="images/cont1/samsung.png" alt="삼성화재 클론 작업물" />
+            </div>
+            <div class="case-desc">
+              <p>
+                삼성화재 공식 사이트 메인 페이지를 그대로 구현했습니다.
+              </p>
+              <button class="open-modal-btn" data-modal="modal-samsung-original">
+                원본 사이트
+              </button>
+              <button class="open-modal-btn" data-modal="modal-samsung-clone">
+                작업물 보기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ 클론 코딩 2 -->
+        <div class="case-block clone">
+          <h3>클론 코딩: 국제커리어센터</h3>
+          <div class="case">
+            <div class="case-image">
+              <img src="images/cont1/kjcareer.png" alt="삼성화재 클론 작업물" />
+            </div>
+            <div class="case-desc">
+              <p>국제 커리어 센터 메인 페이지를 그대로 구현했습니다.</p>
+              <button class="open-modal-btn" data-modal="modal-kjcareer-original">
+                원본 사이트
+              </button>
+              <button class="open-modal-btn" data-modal="modal-kjcareer-clone">
+                작업물 보기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 리디자인 1 -->
+        <div class="case-block redesign">
+          <h3>리디자인: S리더 치과병원</h3>
+          <div class="case">
+            <div class="case-images">
+              <div class="before">
+                <h4>Before</h4>
+                <img src="images/cont1/before.png" alt="Before Design" class="open-modal-img"
+                  data-modal="modal-sreader-before" />
+              </div>
+              <div class="after">
+                <h4>After</h4>
+                <img src="images/cont1/after.png" alt="After Design" class="open-modal-img"
+                  data-modal="modal-sreader-after" />
+              </div>
+            </div>
+            <div class="case-desc">
+              <p>
+                기존 S리더치과병원 사이트를 이용자의 입장에서 분석해보고 리디자인 했습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ 리디자인 2 -->
+        <div class="case-block redesign">
+          <h3>리디자인: 충주시 문화관광</h3>
+          <div class="case">
+            <div class="case-images">
+              <div class="before">
+                <h4>Before</h4>
+                <img src="images/cont1/before2.png" alt="Before Design" class="open-modal-img"
+                  data-modal="modal-chungju-before" />
+              </div>
+              <div class="after">
+                <h4>After</h4>
+                <img src="images/cont1/after2.jpg" alt="Before Design" class="open-modal-img"
+                  data-modal="modal-chungju-after" />
+              </div>
+            </div>
+            <div class="case-desc">
+              <p>
+                기존 충주시 문화관광 사이트를 좀더 보기 좋도록 리디자인 해봤습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
   <!-- ✅ 슬라이더 포트폴리오 섹션 -->
-  <section class="section cont1 scroll-animate desktop-active" id="portfolio">
+  <section class="section cont2 scroll-animate desktop-active" id="portfolio">
     <!-- ✅ 탭 버튼 그룹 -->
     <div class="tab-menu">
       <button class="tab-btn active" data-tab="set1">디자인 기획</button>
@@ -149,8 +241,8 @@
     <!-- 슬라이드 전용 모달 (기존 모달 시스템과는 별도) -->
   </section>
 
-  <section class="section cont2 scroll-animate" id="cont2">
-    <!-- cont2 내부의 .intro-hi-tech-wrapper 유지 -->
+  <section class="section cont3 scroll-animate" id="cont3">
+    <!-- cont3 내부의 .intro-hi-tech-wrapper 유지 -->
     <div class="intro-hi-tech-wrapper">
       <div class="intro-hi-tech text">
         <h2 class="neon-text">My Design Philosophy</h2>
@@ -205,19 +297,19 @@
       <div class="image-column">
         <div class="slider-track">
           <div class="step-detail active" data-step="0">
-            <img src="images/cont2/empathy-detail.png" alt="공감 단계 예시" />
+            <img src="images/cont3/empathy-detail.png" alt="공감 단계 예시" />
             <p>사용자 인터뷰 메모와 페르소나 구성 예시입니다.</p>
           </div>
           <div class="step-detail" data-step="1">
-            <img src="images/cont2/structure-detail.jpg" alt="구조 설계 예시" />
+            <img src="images/cont3/structure-detail.jpg" alt="구조 설계 예시" />
             <p>브랜드의 감성을 감안한 목업 디자인 입니다.</p>
           </div>
           <div class="step-detail" data-step="2">
-            <img src="images/cont2/visual-detail.gif" alt="디자인 예시" />
+            <img src="images/cont3/visual-detail.gif" alt="디자인 예시" />
             <p>Figma로 만든 스타일 가이드와 UI 시안입니다.</p>
           </div>
           <div class="step-detail" data-step="3">
-            <video src="images/cont2/imagestest-detail.mp4" autoplay muted playsinline alt="테스트 예시"></video>
+            <video src="images/cont3/imagestest-detail.mp4" autoplay muted playsinline alt="테스트 예시"></video>
             <p>
               끊임없는 테스트로 오류없고 디자인적으로도 완벽한 사이트를
               추구합니다.
@@ -228,12 +320,12 @@
     </div>
   </section>
 
-  <section class="section cont3" id="cont3">
+  <section class="section cont4" id="cont4">
     <div class="box-wrap">
       <h2 class="neon-text">Ability to possess</h2>
       <div class="box-row">
         <div class="box animate" style="transition-delay: 0s">
-          <img src="/images/cont3/editorial.jpg" alt="edit" />
+          <img src="/images/cont4/editorial.jpg" alt="edit" />
           <h3>편집 디자인</h3>
           <p>
             브랜딩, 인쇄물, 프로모션 디자인까지<br />정갈하면서 임팩트 있는
@@ -241,7 +333,7 @@
           </p>
         </div>
         <div class="box animate" style="transition-delay: 0.2s">
-          <img src="/images/cont3/uiux.jpg" alt="uiux" />
+          <img src="/images/cont4/uiux.jpg" alt="uiux" />
           <h3>웹 & UI 디자인</h3>
           <p>
             반응형 웹, 앱 UI, 프로토타입까지<br />사용자 경험을 고려한
@@ -305,106 +397,7 @@
     </div>
   </section>
 
-  <section class="section cont4 scroll-animate" id="cont4">
-    <div class="cont4-inner">
-      <h2 class="neon-text">PROJECT CASE STUDY</h2>
 
-      <div class="cases-wrapper">
-        <div class="clone-cases">
-          <div class="case-block clone">
-            <h3>클론 코딩: 삼성화재</h3>
-            <div class="case">
-              <div class="case-image">
-                <img src="images/cont4/samsung.png" alt="삼성화재 클론 작업물" />
-              </div>
-              <div class="case-desc">
-                <p>
-                  삼성화재 공식 사이트 메인 페이지를 그대로 구현했습니다.
-                </p>
-                <button class="open-modal-btn" data-modal="modal-samsung-original">
-                  원본 사이트
-                </button>
-                <button class="open-modal-btn" data-modal="modal-samsung-clone">
-                  작업물 보기
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- ✅ 클론 코딩 2 -->
-          <div class="case-block clone">
-            <h3>클론 코딩: 국제커리어센터</h3>
-            <div class="case">
-              <div class="case-image">
-                <img src="images/cont4/kjcareer.png" alt="삼성화재 클론 작업물" />
-              </div>
-              <div class="case-desc">
-                <p>국제 커리어 센터 메인 페이지를 그대로 구현했습니다.</p>
-                <button class="open-modal-btn" data-modal="modal-kjcareer-original">
-                  원본 사이트
-                </button>
-                <button class="open-modal-btn" data-modal="modal-kjcareer-clone">
-                  작업물 보기
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ✅ 리디자인 1 -->
-        <div class="redesign-cases">
-          <div class="case-block redesign">
-            <h3>리디자인: S리더 치과병원</h3>
-            <div class="case">
-              <div class="case-images">
-                <div class="before">
-                  <h4>Before</h4>
-                  <img src="images/cont4/before.png" alt="Before Design" class="open-modal-img"
-                    data-modal="modal-sreader-before" />
-                </div>
-                <div class="after">
-                  <h4>After</h4>
-                  <img src="images/cont4/after.png" alt="After Design" class="open-modal-img"
-                    data-modal="modal-sreader-after" />
-                </div>
-              </div>
-              <div class="case-desc">
-                <p>
-                  복잡했던 정보구조를 단순화하고 CTA를 강화해 사용성을
-                  개선했습니다.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- ✅ 리디자인 2 -->
-          <div class="case-block redesign">
-            <h3>리디자인: 충주시 문화관광</h3>
-            <div class="case">
-              <div class="case-images">
-                <div class="before">
-                  <p>Before</p>
-                  <img src="images/cont4/before2.png" alt="Before Design" class="open-modal-img"
-                    data-modal="modal-chungju-before" />
-                </div>
-                <div class="after">
-                  <p>After</p>
-                  <img src="images/cont4/after2.jpg" alt="Before Design" class="open-modal-img"
-                    data-modal="modal-chungju-after" />
-                </div>
-              </div>
-              <div class="case-desc">
-                <p>
-                  시각적으로 복잡한 날씨 UI를 미니멀하고 직관적으로
-                  리디자인했습니다.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section cont5 scroll-animate" id="cont5">
     <div class="cont5-inner">
@@ -471,7 +464,9 @@
       </div>
     </div>
   </section>
-
+  <section class="section cont6">
+    *작업물이 추가될 때 마다 본 사이트에 작업
+  </section>
   <footer>© 2025 유리의 포트폴리오</footer>
 
   <div class="floating-buttons">
@@ -483,73 +478,73 @@
   <div class="cursor-dot"></div>
   </div>
   <!-- 원본 사이트 모달 -->
-  <div id="modal-samsung-original" class="modal-cont4">
-    <div class="modal-cont4-content">
-      <span class="modal-cont4-close">&times;</span>
+  <div id="modal-samsung-original" class="modal-cont1">
+    <div class="modal-cont1-content">
+      <span class="modal-cont1-close">&times;</span>
       <iframe src="https://www.samsungfire.com/" frameborder="0"></iframe>
     </div>
   </div>
 
   <!-- 작업물 보기 모달 -->
-  <div id="modal-samsung-clone" class="modal-cont4">
-    <div class="modal-cont4-content">
-      <span class="modal-cont4-close">&times;</span>
+  <div id="modal-samsung-clone" class="modal-cont1">
+    <div class="modal-cont1-content">
+      <span class="modal-cont1-close">&times;</span>
       <iframe src="https://samclone.vercel.app/" frameborder="0"></iframe>
     </div>
   </div>
 
   <!-- 모달 -->
-  <div id="modal-kjcareer-original" class="modal-cont4">
-    <div class="modal-cont4-content">
-      <span class="modal-cont4-close">&times;</span>
+  <div id="modal-kjcareer-original" class="modal-cont1">
+    <div class="modal-cont1-content">
+      <span class="modal-cont1-close">&times;</span>
       <iframe src="https://kjcareer.co.kr/" frameborder="0"></iframe>
     </div>
   </div>
 
-  <div id="modal-kjcareer-clone" class="modal-cont4">
-    <div class="modal-cont4-content">
-      <span class="modal-cont4-close">&times;</span>
+  <div id="modal-kjcareer-clone" class="modal-cont1">
+    <div class="modal-cont1-content">
+      <span class="modal-cont1-close">&times;</span>
       <iframe src="https://kjcareer.vercel.app/" frameborder="0"></iframe>
     </div>
   </div>
 
   <!-- 리디자인 BEFORE 모달: S리더 치과 -->
-  <div id="modal-sreader-before" class="modal-cont4">
-    <div class="modal-cont4-content image-only">
-      <span class="modal-cont4-close">&times;</span>
-      <img src="images/cont4/before.png" alt="Before" />
+  <div id="modal-sreader-before" class="modal-cont1">
+    <div class="modal-cont1-content image-only">
+      <span class="modal-cont1-close">&times;</span>
+      <img src="images/cont1/before.png" alt="Before" />
     </div>
   </div>
 
   <!-- 리디자인 AFTER 모달: S리더 치과 -->
-  <div id="modal-sreader-after" class="modal-cont4">
-    <div class="modal-cont4-content image-only">
-      <span class="modal-cont4-close">&times;</span>
-      <img src="images/cont4/after.png" alt="After" />
+  <div id="modal-sreader-after" class="modal-cont1">
+    <div class="modal-cont1-content image-only">
+      <span class="modal-cont1-close">&times;</span>
+      <img src="images/cont1/after.png" alt="After" />
     </div>
   </div>
 
   <!-- 충주시 문화관광 before -->
-  <div id="modal-chungju-before" class="modal-cont4">
-    <div class="modal-cont4-content image-only">
-      <span class="modal-cont4-close">&times;</span>
-      <img src="images/cont4/before2.png" alt="Before" />
+  <div id="modal-chungju-before" class="modal-cont1">
+    <div class="modal-cont1-content image-only">
+      <span class="modal-cont1-close">&times;</span>
+      <img src="images/cont1/before2.png" alt="Before" />
     </div>
   </div>
 
   <!-- 충주시 문화관광 after -->
-  <div id="modal-chungju-after" class="modal-cont4">
-    <div class="modal-cont4-content image-only">
-      <span class="modal-cont4-close">&times;</span>
-      <img src="images/cont4/after2.jpg" alt="After" />
+  <div id="modal-chungju-after" class="modal-cont1">
+    <div class="modal-cont1-content image-only">
+      <span class="modal-cont1-close">&times;</span>
+      <img src="images/cont1/after2.jpg" alt="After" />
     </div>
   </div>
 
   <!-- 슬라이드 모달 -->
-  <div id="modal-cont1-slide" class="modal-cont1">
-    <div class="modal-cont1-content">
-      <span class="modal-cont1-close">&times;</span>
-      <div class="modal-cont1-body"></div>
+  <div id="modal-cont2-slide" class="modal-cont2">
+    <div class="modal-cont2-content">
+      <span class="modal-cont2-close">&times;</span>
+      <div class="modal-cont2-body"></div>
     </div>
   </div>
 </body>
