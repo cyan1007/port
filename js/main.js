@@ -92,13 +92,3 @@ document
       }
     );
   });
-
-document.onkeydown = function (e) {
-  if (
-    e.key === "F12" ||
-    (e.ctrlKey && e.shiftKey && e.key === "I") ||
-    (e.ctrlKey && e.key === "U")
-  ) {
-    return false;
-  }
-};
