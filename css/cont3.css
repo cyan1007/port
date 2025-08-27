@@ -1,302 +1,153 @@
 .cont3 {
-  padding: 80px 20px;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  text-align: center; /* 제목 가운데 정렬 */
-}
-
-.cont3 h2 {
-  font-size: clamp(1.5rem, 6vw, 2.5rem);
-  margin-bottom: 40px;
-}
-.cases-wrapper {
-  max-width: 1200px; /* 최대 너비 제한 */
-  margin: 0 auto; /* 화면 가운데 정렬 */
   display: flex;
-  gap: 4rem;
-  justify-content: center; /* 가운데 정렬 */
-}
-.clone-cases,
-.redesign-cases {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  flex: 1 1 0;
-}
-.case-block {
-  background: var(--bg-dark); /* 필요하면 배경 넣기 */
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: left; /* 내부 왼쪽 정렬 유지 */
-  box-shadow: 0 0 10px var(--color-shadow-cyan-55);
-}
-.redesign-cases {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
-.case {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.case-images {
-  display: flex;
-  gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
-}
-
-.case-images .before,
-.case-images .after {
-  flex: 0 1 calc(50% - 10px); /* ✅ 정확히 반, gap 고려 */
-  max-width: calc(50% - 10px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.case-images img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  max-height: none; /* ✅ 기존 max-height 무효화 (중복 방지) */
-}
-
-.case-desc h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.case-desc p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.modal-cont3 {
-  position: fixed; /* ✅ 화면 전체 기준 */
-  top: 0; /* 초기값 */
-  top: 0;
+  gap: 2rem;
+  padding: 60px 20px;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  padding: 1rem;
-  box-sizing: border-box;
+  background: var(--color-box-bg);
 }
 
-.modal-cont3-content {
-  background-color: var(--bg-dark, #0a0a0a);
+.cont3 .neon-text {
+  margin-bottom: 60px;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  color: var(--color-text-white);
+}
+
+.box-wrap {
   max-width: 100%;
-  max-height: 100%;
-  width: 90vw;
-  height: 90vh;
-  position: relative;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto; /* ✅ 세로 스크롤 가능하게 */
-}
-
-.modal-cont3-content iframe,
-.modal-cont3-content img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.modal-cont3-content.image-only {
-  padding: 0;
-  text-align: center;
-}
-
-.modal-cont3-content.image-only img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
   margin: 0 auto;
-}
-
-.modal-cont3 iframe {
-  flex-grow: 1;
-  border: none;
-  width: 100%;
-  height: 100%;
-}
-
-/* 닫기 버튼 위치는 그대로 유지 */
-.modal-cont3-close {
-  position: fixed; /* ✅ 화면 기준으로 고정 */
-  top: 20px;
-  right: 20px;
-  color: var(--accent, #00f6ff);
-  font-size: 32px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 10000;
-  transition: 0.3s;
-  transform: none; /* ✅ 수정 */
-}
-
-.modal-cont3-close:hover {
-  color: #ff5252;
-}
-.case-desc button {
-  margin-right: 0.5rem;
-  padding: 0.5rem 1.2rem;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--accent);
-  color: var(--color-text-dark);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.case-desc button:hover {
-  background-color: #00d0ff;
-}
-
-/* .cont3 안에 새로 추가할 감싸는 div */
-.cases-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap; /* 반응형에서 잘 쌓이도록 */
-}
-
-/* 왼쪽, 오른쪽 컬럼 각각 */
-.clone-cases,
-.redesign-cases {
-  flex: 1 1 48%; /* 가로폭 48%로 지정 (2열) */
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  .modal-cont3 {
-    align-items: flex-start; /* 모바일은 위에서 시작 */
-    padding-top: 2rem;
-  }
-
-  .modal-cont3-content {
-    width: 100%;
-    max-height: 90vh;
-    height: 90vh !important;
-    overflow-y: auto;
-    padding: 1rem;
-  }
-
-  .modal-cont3-content.image-only img {
-    max-height: 70vh;
-  }
-  .cases-wrapper {
-    flex-direction: column;
-  }
-  .clone-cases,
-  .redesign-cases {
-    flex-basis: 100%;
-  }
-}
-@media (max-width: 900px) {
-  .cases-wrapper {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .cont3-inner {
-    min-width: 300px;
-    max-width: 768px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .case-images .before,
-  .case-images .after {
-    flex: 1 1 100%; /* ✅ 모바일에서는 세로로 */
-    max-width: 100%;
-  }
-
-  .modal-cont3-content {
-    max-height: 85vh;
-    width: 95%;
-    padding: 1rem;
-  }
-
-  .modal-cont3-content.image-only img {
-    max-height: 80vh;
-  }
-
-  .modal-cont3 iframe {
-    max-height: 70vh;
-  }
-}
-
-.case-image {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.case-image img {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.case-image img:hover {
-  transform: scale(1.02);
-}
-
-.case-block {
-  overflow: hidden; /* 넘치는 이미지나 내용 숨김 */
+/* 박스 모음만 따로 flex 줄로 정렬 */
+.box-row {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  margin-bottom: 0;
+  gap: 30px;
+  flex-wrap: wrap;
+  /* 작은 화면에서 줄바꿈 허용 */
 }
 
-.case-image img,
-.case-images img {
-  object-fit: cover; /* 이미지가 잘려도 비율 유지하며 꽉 차게 */
-  width: 100%;
-  height: 30vh;
-}
-.clone-cases .case-block,
-.redesign-cases .case-block {
-  min-height: 520px; /* 필요시 조정 */
-}
-
-.case-images .before,
-.case-images .after {
-  width: 100%;
-  max-width: 500px;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-.case-images .label {
-  font-size: 1rem;
-  line-height: 1.2;
-  margin-bottom: 0.3rem; /* 적당한 간격 */
-}
-
-/* CSS에 추가 */
-body.modal-open {
+.box {
+  position: relative;
   overflow: hidden;
+  background: var(--color-box-bg);
+  /* 어두운 박스 배경 */
+  color: var(--color-accent);
+  box-shadow: var(--color-shadow);
+  /* 그대로 유지 */
+  width: 30vw;
+  /* height: 60vh; */
+  min-height: 300px;
+  /* 최소 높이 지정 */
+  max-height: 600px;
+  /* 최대 높이 제한, 필요하면 조절 */
+  border-radius: 10px;
+
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 제목 가운데 */
+  justify-content: center;
+  text-align: center;
+  min-width: 300px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  flex-shrink: 0;
+  /* ✅ 잘리는 것 방지 */
+}
+
+.box h3,
+.box p {
+  position: relative;
+  z-index: 1;
+  /* 텍스트가 영상 위로 나오도록 */
+}
+
+.box.animate img,
+.box.animate video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* ✅ 꽉 채우기 */
+  height: 100%;
+  /* ✅ 꽉 채우기 */
+  object-fit: cover;
+  /* ✅ 비율 유지하며 박스 채우기 */
+  z-index: 0;
+  opacity: 0.3;
+  transform: none;
+  /* ✅ 가운데 정렬 제거 (필요 없음) */
+}
+
+.box.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.box:hover img {
+  opacity: 0.7;
+}
+
+.box:hover video {
+  opacity: 0.7;
+}
+
+.box h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.box:hover h3 {
+  display: none;
+}
+
+.box:hover p {
+  display: none;
+}
+
+.box p {
+  text-align: left;
+  /* 본문은 왼쪽 정렬 */
+  max-width: 90%;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* 998px 이하에서 .box-row를 2열 그리드로 강제 고정 */
+@media (max-width: 998px) {
+  .box-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2열 고정 */
+    gap: 20px 30px;
+    /* 행과 열 간격 조절 */
+    justify-content: center;
+    /* 가운데 정렬 */
+  }
+
+  .box {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 300px;
+    max-height: none;
+    /* 그리드에 맞게 높이 자유롭게 */
+  }
+}
+
+/* 더 작은 화면 (예: 600px 이하)에서는 1열로 바꾸기 */
+@media (max-width: 600px) {
+  .box-row {
+    grid-template-columns: 1fr;
+  }
 }

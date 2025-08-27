@@ -3,7 +3,7 @@ export function initModal() {
     btn.addEventListener("click", () => {
       const modalId = btn.getAttribute("data-modal");
       const modal = document.getElementById(modalId);
-      if (modal && modal.classList.contains("modal-cont3")) {
+      if (modal && modal.classList.contains("modal-cont4")) {
         modal.style.display = "flex"; // flex → 중앙 정렬
         openModal(modal);
       }
@@ -14,21 +14,21 @@ export function initModal() {
     img.addEventListener("click", () => {
       const modalId = img.dataset.modal;
       const modal = document.getElementById(modalId);
-      if (modal && modal.classList.contains("modal-cont3")) {
+      if (modal && modal.classList.contains("modal-cont4")) {
         modal.style.display = "flex";
       }
     });
   });
 
-  document.querySelectorAll(".modal-cont3-close").forEach((btn) => {
+  document.querySelectorAll(".modal-cont4-close").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const modal = btn.closest(".modal-cont3");
+      const modal = btn.closest(".modal-cont4");
       closeModal(modal);
     });
   });
 
   window.addEventListener("click", (e) => {
-    document.querySelectorAll(".modal-cont3").forEach((modal) => {
+    document.querySelectorAll(".modal-cont4").forEach((modal) => {
       if (e.target === modal) closeModal(modal);
     });
   });
