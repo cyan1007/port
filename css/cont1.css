@@ -18,11 +18,12 @@
 .cases-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* 2열 */
+  /* 기본: 2열 */
   gap: 2rem;
-  /* 행과 열 사이 간격 */
+  /* 상자 사이 여백 */
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .clone-cases,
@@ -30,16 +31,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-}
-
-.case-block {
-  background: var(--bg-dark);
-  /* 필요하면 배경 넣기 */
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: left;
-  /* 내부 왼쪽 정렬 유지 */
-  box-shadow: 0 0 10px var(--color-shadow-cyan-55);
 }
 
 .redesign-cases {
@@ -208,8 +199,10 @@
   }
 
   .cases-wrapper {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    /* 한 줄 */
+    gap: 1.5rem;
+    /* 좁은 화면에선 간격도 약간 줄이기 */
   }
 
   .clone-cases,
@@ -272,26 +265,24 @@
 }
 
 .case-block {
+  display: block;
+  height: auto;
+  min-height: unset;
   overflow: hidden;
-  /* 넘치는 이미지나 내용 숨김 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 0;
+  padding: 1.5rem;
+  background: var(--bg-dark);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--color-shadow-cyan-55);
 }
 
 .case-image img,
 .case-images img {
-  object-fit: cover;
-  /* 이미지가 잘려도 비율 유지하며 꽉 차게 */
   width: 100%;
   height: 20vh;
-}
-
-.clone-cases .case-block,
-.redesign-cases .case-block {
-  min-height: 520px;
-  /* 필요시 조정 */
+  /* 반드시 auto 유지 */
+  object-fit: cover;
+  max-height: 300px;
+  /* 필요 시 최대 높이 제한 */
 }
 
 .case-images .before,

@@ -25,9 +25,11 @@ body.light-mode {
   --color-shadow: var(--color-shadow-light);
   --color-hover: var(--color-hover-light);
 }
+
 body:not(.light-mode) .hero {
   background: linear-gradient(to right, #0a0a0a, #111);
 }
+
 /* ======================= */
 /* 2. 기본 바디 및 텍스트 */
 /* ======================= */
@@ -52,7 +54,6 @@ body {
 .cont1 {
   background: var(--color-bg);
   color: var(--color-accent);
-  height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -84,7 +85,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap; /* 작은 화면에서 줄바꿈 허용 */
+  flex-wrap: wrap;
+  /* 작은 화면에서 줄바꿈 허용 */
 }
 
 .box {
@@ -98,14 +100,16 @@ body {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 제목 가운데 */
+  align-items: center;
+  /* 제목 가운데 */
   justify-content: center;
   text-align: center;
 
   transform: translateY(50px);
   opacity: 0;
   transition: transform 0.6s ease, opacity 0.6s ease;
-  flex-shrink: 0; /* 잘리는 것 방지 */
+  flex-shrink: 0;
+  /* 잘리는 것 방지 */
 }
 
 .box.animate {
@@ -121,7 +125,8 @@ body {
 }
 
 .box p {
-  text-align: left; /* 본문은 왼쪽 정렬 */
+  text-align: left;
+  /* 본문은 왼쪽 정렬 */
   max-width: 90%;
   font-size: 1rem;
   line-height: 1.6;
@@ -133,6 +138,7 @@ body {
   .cont2 {
     height: 100%;
   }
+
   .box-row {
     flex-direction: column;
     align-items: center;
@@ -143,6 +149,7 @@ body {
     max-width: 400px;
   }
 }
+
 .cont5 {
   background-color: var(--color-box-bg);
   color: var(--color-text-main);
@@ -177,12 +184,11 @@ body {
 
 /* ========== 4. 텍스트 강조 ========== */
 .highlight {
-  color: var(--color-text-white); /* 텍스트 컬러는 흰색 유지 (변경 없음) */
-  background: linear-gradient(
-    90deg,
-    var(--color-highlight-gradient-start) 0%,
-    var(--color-highlight-gradient-end) 100%
-  );
+  color: var(--color-text-white);
+  /* 텍스트 컬러는 흰색 유지 (변경 없음) */
+  background: linear-gradient(90deg,
+      var(--color-highlight-gradient-start) 0%,
+      var(--color-highlight-gradient-end) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -194,6 +200,7 @@ body {
     text-shadow: 0 0 5px var(--color-accent), 0 0 10px var(--color-accent),
       0 0 20px var(--color-accent);
   }
+
   to {
     text-shadow: 0 0 10px var(--color-accent), 0 0 20px #00ffff,
       0 0 30px #00ffff;
@@ -280,7 +287,8 @@ body {
 .image-column img,
 .image-column video {
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* shadow는 별도변수로 안뺐음 - 유지 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  /* shadow는 별도변수로 안뺐음 - 유지 */
   object-fit: cover;
 }
 
@@ -320,6 +328,7 @@ span,
   margin-bottom: 2rem;
   color: var(--color-text-muted);
 }
+
 /* ========== 13. 전체화면 섹션 ========== */
 .fullscreen-section {
   width: 100vw;
