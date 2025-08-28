@@ -63,7 +63,7 @@ const slideSets = {
       <p>이음누리 도서관 어플을 기획하면서 한 발표 내용입니다.</p>`,
     },
     {
-      title: "앱 디자인 1",
+      title: "밥플릭스 어플",
       desc: "밥플릭스 어플 기획 팀 프로젝트",
       img: "images/cont2/intro.png",
       type: "modal",
@@ -82,11 +82,21 @@ const slideSets = {
   `,
     },
     {
-      title: "앱 디자인 2",
-      desc: "개인 어플 제작 기획(추가예정)",
-      img: "images/cont2/coming.jpg",
+      title: "나갈래용 어플",
+      desc: "개인 어플 나갈래용 제작 기획",
+      img: "images/cont2/frame.png",
       type: "modal",
-      content: `<h3>개인적으로</h3><p>어플을 제작 기획한 내용입니다.</p>`,
+      content: `    <img src="/images/cont2/and.png">
+    <h3>나갈래용 어플</h3>
+    <p>개인 어플 기획 내용입니다.</p>
+    <div style="margin-top: 1rem;">
+      <a href="https://www.figma.com/proto/wM5uimWiKSIce5S3dPMTzo/%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8-%EA%B3%BC%EC%A0%9C%EC%9E%AC%EC%B6%9C?node-id=2-5&t=ncmXSVJAFdPDW9iU-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A5" 
+         target="_blank" 
+         class="modal-link-button" 
+         style="display:inline-block;padding:0.5rem 1rem;margin-top:1rem;background:#333;color:#fff;border-radius:5px;text-decoration:none;">
+        Figma에서 보러가기
+      </a>
+    </div>`,
     },
     {
       title: "협업 리디자인 계획",
